@@ -41,7 +41,7 @@ namespace Broadcast
                     }
                 }
             }
-            MessageBox.Show(maxHResolution + " x " + maxVResolution);
+            //MessageBox.Show(maxHResolution + " x " + maxVResolution);
 
             Height = checked((int)maxVResolution);
             Width = checked((int)maxHResolution);

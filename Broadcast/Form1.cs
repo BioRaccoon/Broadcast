@@ -1332,17 +1332,17 @@ namespace Broadcast
             }
         }
 
-        private void recordPreviewButton_Click(object sender, EventArgs e)
+        private void recordScreenButton_Click(object sender, EventArgs e)
         {   
-            if (recordPreviewButton.BackColor == Color.Red)
+            if (recordScreenButton.BackColor == Color.Red)
             {
                 recorder = new Recorder(new ScreenRecorder(recordsFolder + DateTime.Now.Day +  ".mp4", 30, SharpAvi.KnownFourCCs.Codecs.MotionJpeg, 100));
-                recordPreviewButton.BackColor = Color.Lime;
+                recordScreenButton.BackColor = Color.Lime;
             }
             else
             {
                 recorder.Dispose();
-                recordPreviewButton.BackColor = Color.Red;
+                recordScreenButton.BackColor = Color.Red;
             }
         }
 

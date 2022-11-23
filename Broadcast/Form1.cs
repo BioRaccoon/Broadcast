@@ -1,6 +1,5 @@
 ﻿using AForge.Video;
 using AForge.Video.DirectShow;
-using AxWMPLib;
 using Broadcast.Properties;
 using System;
 using System.Drawing;
@@ -53,7 +52,6 @@ namespace Broadcast
             setFoldersNames();
             setFormControlsProperties();
             fillListBoxes();
-            //localVideoCaptureDevice1 = new VideoCaptureDevice();
         }
 
         private void fillListBoxes()
@@ -126,70 +124,60 @@ namespace Broadcast
         private void defaultControlVideo()
         {
             axWindowsMediaPlayer1.uiMode = "none";
-            axWindowsMediaPlayer1.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer1.settings.mute = true;
             axWindowsMediaPlayer1.stretchToFit = true;
             axWindowsMediaPlayer1.settings.autoStart = true;
             axWindowsMediaPlayer1.settings.setMode("loop", true);
 
             axWindowsMediaPlayer2.uiMode = "none";
-            //axWindowsMediaPlayer2.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer2.settings.mute = true;
             axWindowsMediaPlayer2.stretchToFit = true;
             axWindowsMediaPlayer2.settings.autoStart = true;
             axWindowsMediaPlayer2.settings.setMode("loop", true);
 
             axWindowsMediaPlayer3.uiMode = "none";
-            //axWindowsMediaPlayer3.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer3.settings.mute = true;
             axWindowsMediaPlayer3.stretchToFit = true;
             axWindowsMediaPlayer3.settings.autoStart = true;
             axWindowsMediaPlayer3.settings.setMode("loop", true);
 
             axWindowsMediaPlayer4.uiMode = "none";
-            //axWindowsMediaPlayer4.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer4.settings.mute = true;
             axWindowsMediaPlayer4.stretchToFit = true;
             axWindowsMediaPlayer4.settings.autoStart = true;
             axWindowsMediaPlayer4.settings.setMode("loop", true);
 
             axWindowsMediaPlayer5.uiMode = "none";
-            //axWindowsMediaPlayer5.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer5.settings.mute = true;
             axWindowsMediaPlayer5.stretchToFit = true;
             axWindowsMediaPlayer5.settings.autoStart = true;
             axWindowsMediaPlayer5.settings.setMode("loop", true);
 
             axWindowsMediaPlayer6.uiMode = "none";
-            //axWindowsMediaPlayer6.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer6.settings.mute = true;
             axWindowsMediaPlayer6.stretchToFit = true;
             axWindowsMediaPlayer6.settings.autoStart = true;
             axWindowsMediaPlayer6.settings.setMode("loop", true);
 
             axWindowsMediaPlayer7.uiMode = "none";
-            //axWindowsMediaPlayer7.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer7.settings.mute = true;
             axWindowsMediaPlayer7.stretchToFit = true;
             axWindowsMediaPlayer7.settings.autoStart = true;
             axWindowsMediaPlayer7.settings.setMode("loop", true);
 
             axWindowsMediaPlayer8.uiMode = "none";
-            //axWindowsMediaPlayer8.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer8.settings.mute = true;
             axWindowsMediaPlayer8.stretchToFit = true;
             axWindowsMediaPlayer8.settings.autoStart = true;
             axWindowsMediaPlayer8.settings.setMode("loop", true);
 
             axWindowsMediaPlayer9.uiMode = "none";
-            //axWindowsMediaPlayer9.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer9.settings.mute = true;
             axWindowsMediaPlayer9.stretchToFit = true;
             axWindowsMediaPlayer9.settings.autoStart = true;
             axWindowsMediaPlayer9.settings.setMode("loop", true);
 
             axWindowsMediaPlayer10.uiMode = "none";
-            //axWindowsMediaPlayer10.URL = "C:\\Users\\josep\\Downloads\\space video.mp4";
             axWindowsMediaPlayer10.settings.mute = true;
             axWindowsMediaPlayer10.stretchToFit = true;
             axWindowsMediaPlayer10.settings.autoStart = true;
@@ -713,7 +701,7 @@ namespace Broadcast
         {
             if (videoFiles.SelectedItem != null)
             {
-                videoFiles.DoDragDrop(videoFiles.SelectedItem, DragDropEffects.Copy);
+                videoFiles.DoDragDrop(resourcesFolder + videoFiles.SelectedItem, DragDropEffects.Copy);
             }
         }
 
@@ -884,7 +872,9 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer1.URL = resourcesFolder + data;
+                axWindowsMediaPlayer1.URL = data + "";
+                axWindowsMediaPlayer1.settings.mute = true;
+
             }
             else
             {
@@ -895,6 +885,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer1.URL = fileNames[0];
+                        axWindowsMediaPlayer1.settings.mute = true;
                     }
                 }
             }
@@ -911,7 +902,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer2.URL = resourcesFolder + data;
+                axWindowsMediaPlayer2.URL = data + "";
+                axWindowsMediaPlayer2.settings.mute = true;
             }
             else
             {
@@ -922,6 +914,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer2.URL = fileNames[0];
+                        axWindowsMediaPlayer2.settings.mute = true;
                     }
                 }
             }
@@ -932,7 +925,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer3.URL = resourcesFolder + data;
+                axWindowsMediaPlayer3.URL = data + "";
+                axWindowsMediaPlayer3.settings.mute = true;
             }
             else
             {
@@ -943,6 +937,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer3.URL = fileNames[0];
+                        axWindowsMediaPlayer3.settings.mute = true;
                     }
                 }
             }
@@ -953,7 +948,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer4.URL = resourcesFolder + data;
+                axWindowsMediaPlayer4.URL = data + "";
+                axWindowsMediaPlayer4.settings.mute = true;
             }
             else
             {
@@ -964,6 +960,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer4.URL = fileNames[0];
+                        axWindowsMediaPlayer4.settings.mute = true;
                     }
                 }
             }
@@ -974,7 +971,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer5.URL = resourcesFolder + data;
+                axWindowsMediaPlayer5.URL = data + "";
+                axWindowsMediaPlayer5.settings.mute = true;
             }
             else
             {
@@ -985,6 +983,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer5.URL = fileNames[0];
+                        axWindowsMediaPlayer5.settings.mute = true;
                     }
                 }
             }
@@ -995,7 +994,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer6.URL = resourcesFolder + data;
+                axWindowsMediaPlayer6.URL = data + "";
+                axWindowsMediaPlayer6.settings.mute = true;
             }
             else
             {
@@ -1006,6 +1006,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer6.URL = fileNames[0];
+                        axWindowsMediaPlayer6.settings.mute = true;
                     }
                 }
             }
@@ -1016,7 +1017,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer7.URL = resourcesFolder + data;
+                axWindowsMediaPlayer7.URL = data + "";
+                axWindowsMediaPlayer7.settings.mute = true;
             }
             else
             {
@@ -1027,6 +1029,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer7.URL = fileNames[0];
+                        axWindowsMediaPlayer7.settings.mute = true;
                     }
                 }
             }
@@ -1037,7 +1040,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer8.URL = resourcesFolder + data;
+                axWindowsMediaPlayer8.URL = data + "";
+                axWindowsMediaPlayer8.settings.mute = true;
             }
             else
             {
@@ -1048,6 +1052,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer8.URL = fileNames[0];
+                        axWindowsMediaPlayer8.settings.mute = true;
                     }
                 }
             }
@@ -1058,7 +1063,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer9.URL = resourcesFolder + data;
+                axWindowsMediaPlayer9.URL = data + "";
+                axWindowsMediaPlayer9.settings.mute = true;
             }
             else
             {
@@ -1069,6 +1075,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer9.URL = fileNames[0];
+                        axWindowsMediaPlayer9.settings.mute = true;
                     }
                 }
             }
@@ -1079,7 +1086,8 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer10.URL = resourcesFolder + data;
+                axWindowsMediaPlayer10.URL = data + "";
+                axWindowsMediaPlayer10.settings.mute = true;
             }
             else
             {
@@ -1090,6 +1098,7 @@ namespace Broadcast
                     if (fileNames.Length > 0)
                     {
                         axWindowsMediaPlayer10.URL = fileNames[0];
+                        axWindowsMediaPlayer10.settings.mute = true;
                     }
                 }
             }
@@ -1333,15 +1342,27 @@ namespace Broadcast
         }
 
         private void recordScreenButton_Click(object sender, EventArgs e)
-        {   
+        {
             if (recordScreenButton.BackColor == Color.Red)
             {
-                recorder = new Recorder(new ScreenRecorder(recordsFolder + DateTime.Now.Day +  ".mp4", 30, SharpAvi.KnownFourCCs.Codecs.MotionJpeg, 100));
+                string filename = DateTime.Now.ToString();
+                var charsToRemove = new string[] { "/", ":" };
+                foreach (var c in charsToRemove)
+                {
+                    filename = filename.Replace(c, "-");
+                }
+                recorder = new Recorder(new ScreenRecorder(recordsFolder + filename + ".mp4", 30, SharpAvi.KnownFourCCs.Codecs.MotionJpeg, 60));
                 recordScreenButton.BackColor = Color.Lime;
             }
             else
             {
                 recorder.Dispose();
+                recordsList.Items.Clear();
+                string[] recordsFiles = Directory.GetFiles(recordsFolder);
+                foreach (string file in recordsFiles)
+                {
+                    recordsList.Items.Add(Path.GetFileName(file));
+                }
                 recordScreenButton.BackColor = Color.Red;
             }
         }
@@ -1358,7 +1379,27 @@ namespace Broadcast
         {
             if (recordsList.SelectedItem != null)
             {
-                recordsList.DoDragDrop(recordsList.SelectedItem, DragDropEffects.Copy);
+                recordsList.DoDragDrop(recordsFolder + recordsList.SelectedItem, DragDropEffects.Copy);
+            }
+        }
+
+        private void broadcastPlaylist_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void broadcastPlaylist_DragDrop(object sender, DragEventArgs e)
+        {
+            var data = e.Data.GetData(DataFormats.Text);
+            if (data != null)
+            {
+                File.Copy(data + "", playlistFolder + Path.GetFileName(data + ""), true);
+                broadcastPlaylist.Items.Clear();
+                string[] broadcastPlaylistFiles = Directory.GetFiles(playlistFolder);
+                foreach (string file in broadcastPlaylistFiles)
+                {
+                    broadcastPlaylist.Items.Add(Path.GetFileName(file));
+                }
             }
         }
 

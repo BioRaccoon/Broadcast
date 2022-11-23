@@ -1361,6 +1361,12 @@ namespace Broadcast
                 recordsList.DoDragDrop(recordsList.SelectedItem, DragDropEffects.Copy);
             }
         }
+
+        private void customizeChannelButton_Click(object sender, EventArgs e)
+        {
+            Form2 customizationForm = new Form2(this);
+            customizationForm.ShowDialog();
+        }
     }
 
 }

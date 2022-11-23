@@ -88,6 +88,7 @@
             this.addVideoFileButton = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayerLive = new AxWMPLib.AxWindowsMediaPlayer();
             this.transpCtrlLive = new Broadcast.TransparentControl();
+            this.logoIconPicBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.liveAreaVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.previewBox.SuspendLayout();
@@ -103,16 +104,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoIconPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // broadcasterLabel
             // 
             this.broadcasterLabel.AutoSize = true;
             this.broadcasterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 34F);
-            this.broadcasterLabel.Location = new System.Drawing.Point(11, 9);
+            this.broadcasterLabel.Location = new System.Drawing.Point(11, 18);
             this.broadcasterLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.broadcasterLabel.Name = "broadcasterLabel";
-            this.broadcasterLabel.Size = new System.Drawing.Size(910, 66);
+            this.broadcasterLabel.Size = new System.Drawing.Size(738, 54);
             this.broadcasterLabel.TabIndex = 5;
             this.broadcasterLabel.Text = "INDES - BROADCASTER - J&R TV";
             this.broadcasterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -122,10 +124,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(964, 354);
+            this.label1.Location = new System.Drawing.Point(966, 383);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 34);
+            this.label1.Size = new System.Drawing.Size(115, 28);
             this.label1.TabIndex = 13;
             this.label1.Text = "MIX LIVE";
             // 
@@ -134,7 +136,7 @@
             this.liveButton1.AutoSize = true;
             this.liveButton1.BackColor = System.Drawing.Color.Red;
             this.liveButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton1.Location = new System.Drawing.Point(815, 390);
+            this.liveButton1.Location = new System.Drawing.Point(817, 419);
             this.liveButton1.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton1.Name = "liveButton1";
             this.liveButton1.Size = new System.Drawing.Size(70, 70);
@@ -147,7 +149,7 @@
             // 
             this.liveButton3.BackColor = System.Drawing.Color.Red;
             this.liveButton3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton3.Location = new System.Drawing.Point(889, 390);
+            this.liveButton3.Location = new System.Drawing.Point(891, 419);
             this.liveButton3.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton3.Name = "liveButton3";
             this.liveButton3.Size = new System.Drawing.Size(70, 70);
@@ -160,7 +162,7 @@
             // 
             this.liveButton5.BackColor = System.Drawing.Color.Red;
             this.liveButton5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton5.Location = new System.Drawing.Point(963, 390);
+            this.liveButton5.Location = new System.Drawing.Point(965, 419);
             this.liveButton5.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton5.Name = "liveButton5";
             this.liveButton5.Size = new System.Drawing.Size(70, 70);
@@ -173,7 +175,7 @@
             // 
             this.liveButton6.BackColor = System.Drawing.Color.Red;
             this.liveButton6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton6.Location = new System.Drawing.Point(963, 471);
+            this.liveButton6.Location = new System.Drawing.Point(965, 500);
             this.liveButton6.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton6.Name = "liveButton6";
             this.liveButton6.Size = new System.Drawing.Size(70, 70);
@@ -186,7 +188,7 @@
             // 
             this.liveButton4.BackColor = System.Drawing.Color.Red;
             this.liveButton4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton4.Location = new System.Drawing.Point(889, 471);
+            this.liveButton4.Location = new System.Drawing.Point(891, 500);
             this.liveButton4.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton4.Name = "liveButton4";
             this.liveButton4.Size = new System.Drawing.Size(70, 70);
@@ -199,7 +201,7 @@
             // 
             this.liveButton2.BackColor = System.Drawing.Color.Red;
             this.liveButton2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton2.Location = new System.Drawing.Point(815, 471);
+            this.liveButton2.Location = new System.Drawing.Point(817, 500);
             this.liveButton2.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton2.Name = "liveButton2";
             this.liveButton2.Size = new System.Drawing.Size(70, 70);
@@ -211,8 +213,8 @@
             // liveAreaVideo
             // 
             this.liveAreaVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.liveAreaVideo.Image = global::Broadcast.Properties.Resources.no_signal;
-            this.liveAreaVideo.Location = new System.Drawing.Point(786, 67);
+            this.liveAreaVideo.Image = ((System.Drawing.Image)(resources.GetObject("liveAreaVideo.Image")));
+            this.liveAreaVideo.Location = new System.Drawing.Point(788, 96);
             this.liveAreaVideo.Margin = new System.Windows.Forms.Padding(2);
             this.liveAreaVideo.Name = "liveAreaVideo";
             this.liveAreaVideo.Size = new System.Drawing.Size(495, 280);
@@ -223,7 +225,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::Broadcast.Properties.Resources.no_signal;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(10, 18);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
@@ -260,7 +262,7 @@
             this.previewBox.Controls.Add(this.pictureBox2);
             this.previewBox.Controls.Add(this.pictureBox1);
             this.previewBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.previewBox.Location = new System.Drawing.Point(11, 67);
+            this.previewBox.Location = new System.Drawing.Point(13, 96);
             this.previewBox.Name = "previewBox";
             this.previewBox.Size = new System.Drawing.Size(770, 280);
             this.previewBox.TabIndex = 22;
@@ -470,7 +472,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::Broadcast.Properties.Resources.no_signal;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(10, 142);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
@@ -485,7 +487,7 @@
             // 
             this.liveButton12.BackColor = System.Drawing.Color.Red;
             this.liveButton12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton12.Location = new System.Drawing.Point(1185, 471);
+            this.liveButton12.Location = new System.Drawing.Point(1187, 500);
             this.liveButton12.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton12.Name = "liveButton12";
             this.liveButton12.Size = new System.Drawing.Size(70, 70);
@@ -498,7 +500,7 @@
             // 
             this.liveButton10.BackColor = System.Drawing.Color.Red;
             this.liveButton10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton10.Location = new System.Drawing.Point(1111, 471);
+            this.liveButton10.Location = new System.Drawing.Point(1113, 500);
             this.liveButton10.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton10.Name = "liveButton10";
             this.liveButton10.Size = new System.Drawing.Size(70, 70);
@@ -511,7 +513,7 @@
             // 
             this.liveButton8.BackColor = System.Drawing.Color.Red;
             this.liveButton8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton8.Location = new System.Drawing.Point(1037, 471);
+            this.liveButton8.Location = new System.Drawing.Point(1039, 500);
             this.liveButton8.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton8.Name = "liveButton8";
             this.liveButton8.Size = new System.Drawing.Size(70, 70);
@@ -524,7 +526,7 @@
             // 
             this.liveButton11.BackColor = System.Drawing.Color.Red;
             this.liveButton11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton11.Location = new System.Drawing.Point(1185, 390);
+            this.liveButton11.Location = new System.Drawing.Point(1187, 419);
             this.liveButton11.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton11.Name = "liveButton11";
             this.liveButton11.Size = new System.Drawing.Size(70, 70);
@@ -537,7 +539,7 @@
             // 
             this.liveButton9.BackColor = System.Drawing.Color.Red;
             this.liveButton9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton9.Location = new System.Drawing.Point(1111, 390);
+            this.liveButton9.Location = new System.Drawing.Point(1113, 419);
             this.liveButton9.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton9.Name = "liveButton9";
             this.liveButton9.Size = new System.Drawing.Size(70, 70);
@@ -551,7 +553,7 @@
             this.liveButton7.AutoSize = true;
             this.liveButton7.BackColor = System.Drawing.Color.Red;
             this.liveButton7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveButton7.Location = new System.Drawing.Point(1037, 390);
+            this.liveButton7.Location = new System.Drawing.Point(1039, 419);
             this.liveButton7.Margin = new System.Windows.Forms.Padding(2);
             this.liveButton7.Name = "liveButton7";
             this.liveButton7.Size = new System.Drawing.Size(70, 70);
@@ -564,19 +566,20 @@
             // 
             this.customizeChannelButton.BackColor = System.Drawing.Color.Red;
             this.customizeChannelButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customizeChannelButton.Location = new System.Drawing.Point(815, 693);
+            this.customizeChannelButton.Location = new System.Drawing.Point(817, 722);
             this.customizeChannelButton.Margin = new System.Windows.Forms.Padding(2);
             this.customizeChannelButton.Name = "customizeChannelButton";
             this.customizeChannelButton.Size = new System.Drawing.Size(440, 70);
             this.customizeChannelButton.TabIndex = 29;
             this.customizeChannelButton.Text = "Customize Channel";
             this.customizeChannelButton.UseVisualStyleBackColor = false;
+            this.customizeChannelButton.Click += new System.EventHandler(this.customizeChannelButton_Click);
             // 
             // recordScreenButton
             // 
             this.recordScreenButton.BackColor = System.Drawing.Color.Red;
             this.recordScreenButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordScreenButton.Location = new System.Drawing.Point(1037, 545);
+            this.recordScreenButton.Location = new System.Drawing.Point(1039, 574);
             this.recordScreenButton.Margin = new System.Windows.Forms.Padding(2);
             this.recordScreenButton.Name = "recordScreenButton";
             this.recordScreenButton.Size = new System.Drawing.Size(218, 70);
@@ -589,7 +592,7 @@
             // 
             this.playlistModeButton.BackColor = System.Drawing.Color.Red;
             this.playlistModeButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playlistModeButton.Location = new System.Drawing.Point(815, 619);
+            this.playlistModeButton.Location = new System.Drawing.Point(817, 648);
             this.playlistModeButton.Margin = new System.Windows.Forms.Padding(2);
             this.playlistModeButton.Name = "playlistModeButton";
             this.playlistModeButton.Size = new System.Drawing.Size(440, 70);
@@ -602,7 +605,7 @@
             // 
             this.screenBroadcastButton.BackColor = System.Drawing.Color.Red;
             this.screenBroadcastButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.screenBroadcastButton.Location = new System.Drawing.Point(815, 545);
+            this.screenBroadcastButton.Location = new System.Drawing.Point(817, 574);
             this.screenBroadcastButton.Margin = new System.Windows.Forms.Padding(2);
             this.screenBroadcastButton.Name = "screenBroadcastButton";
             this.screenBroadcastButton.Size = new System.Drawing.Size(218, 70);
@@ -614,10 +617,9 @@
             // 
             this.videoFiles.AllowDrop = true;
             this.videoFiles.FormattingEnabled = true;
-            this.videoFiles.ItemHeight = 16;
-            this.videoFiles.Location = new System.Drawing.Point(21, 383);
+            this.videoFiles.Location = new System.Drawing.Point(23, 412);
             this.videoFiles.Name = "videoFiles";
-            this.videoFiles.Size = new System.Drawing.Size(182, 340);
+            this.videoFiles.Size = new System.Drawing.Size(182, 329);
             this.videoFiles.TabIndex = 33;
             this.videoFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
             // 
@@ -625,10 +627,9 @@
             // 
             this.CamerasBox.AllowDrop = true;
             this.CamerasBox.FormattingEnabled = true;
-            this.CamerasBox.ItemHeight = 16;
-            this.CamerasBox.Location = new System.Drawing.Point(397, 383);
+            this.CamerasBox.Location = new System.Drawing.Point(399, 412);
             this.CamerasBox.Name = "CamerasBox";
-            this.CamerasBox.Size = new System.Drawing.Size(182, 164);
+            this.CamerasBox.Size = new System.Drawing.Size(182, 160);
             this.CamerasBox.TabIndex = 35;
             this.CamerasBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CamerasBox_MouseDown);
             // 
@@ -636,10 +637,9 @@
             // 
             this.recordsList.AllowDrop = true;
             this.recordsList.FormattingEnabled = true;
-            this.recordsList.ItemHeight = 16;
-            this.recordsList.Location = new System.Drawing.Point(397, 591);
+            this.recordsList.Location = new System.Drawing.Point(399, 620);
             this.recordsList.Name = "recordsList";
-            this.recordsList.Size = new System.Drawing.Size(182, 132);
+            this.recordsList.Size = new System.Drawing.Size(182, 121);
             this.recordsList.TabIndex = 36;
             this.recordsList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.recordsList_MouseDown);
             // 
@@ -647,10 +647,9 @@
             // 
             this.urlVideos.AllowDrop = true;
             this.urlVideos.FormattingEnabled = true;
-            this.urlVideos.ItemHeight = 16;
-            this.urlVideos.Location = new System.Drawing.Point(209, 383);
+            this.urlVideos.Location = new System.Drawing.Point(211, 412);
             this.urlVideos.Name = "urlVideos";
-            this.urlVideos.Size = new System.Drawing.Size(182, 340);
+            this.urlVideos.Size = new System.Drawing.Size(182, 329);
             this.urlVideos.TabIndex = 37;
             this.urlVideos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.urlVideos_MouseDown);
             // 
@@ -658,16 +657,15 @@
             // 
             this.broadcastPlaylist.AllowDrop = true;
             this.broadcastPlaylist.FormattingEnabled = true;
-            this.broadcastPlaylist.ItemHeight = 16;
-            this.broadcastPlaylist.Location = new System.Drawing.Point(585, 383);
+            this.broadcastPlaylist.Location = new System.Drawing.Point(587, 412);
             this.broadcastPlaylist.Name = "broadcastPlaylist";
-            this.broadcastPlaylist.Size = new System.Drawing.Size(182, 340);
+            this.broadcastPlaylist.Size = new System.Drawing.Size(182, 329);
             this.broadcastPlaylist.TabIndex = 38;
             // 
             // addCameraButton
             // 
             this.addCameraButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.addCameraButton.Location = new System.Drawing.Point(397, 553);
+            this.addCameraButton.Location = new System.Drawing.Point(399, 582);
             this.addCameraButton.Name = "addCameraButton";
             this.addCameraButton.Size = new System.Drawing.Size(88, 34);
             this.addCameraButton.TabIndex = 39;
@@ -678,7 +676,7 @@
             // removeCameraButton
             // 
             this.removeCameraButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.removeCameraButton.Location = new System.Drawing.Point(491, 553);
+            this.removeCameraButton.Location = new System.Drawing.Point(493, 582);
             this.removeCameraButton.Name = "removeCameraButton";
             this.removeCameraButton.Size = new System.Drawing.Size(88, 34);
             this.removeCameraButton.TabIndex = 40;
@@ -689,7 +687,7 @@
             // removeRecordFileButton
             // 
             this.removeRecordFileButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.removeRecordFileButton.Location = new System.Drawing.Point(491, 729);
+            this.removeRecordFileButton.Location = new System.Drawing.Point(493, 758);
             this.removeRecordFileButton.Name = "removeRecordFileButton";
             this.removeRecordFileButton.Size = new System.Drawing.Size(88, 34);
             this.removeRecordFileButton.TabIndex = 42;
@@ -700,7 +698,7 @@
             // addRecordFileButton
             // 
             this.addRecordFileButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.addRecordFileButton.Location = new System.Drawing.Point(397, 729);
+            this.addRecordFileButton.Location = new System.Drawing.Point(399, 758);
             this.addRecordFileButton.Name = "addRecordFileButton";
             this.addRecordFileButton.Size = new System.Drawing.Size(88, 34);
             this.addRecordFileButton.TabIndex = 41;
@@ -711,7 +709,7 @@
             // removePlaylistFileButton
             // 
             this.removePlaylistFileButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.removePlaylistFileButton.Location = new System.Drawing.Point(679, 729);
+            this.removePlaylistFileButton.Location = new System.Drawing.Point(681, 758);
             this.removePlaylistFileButton.Name = "removePlaylistFileButton";
             this.removePlaylistFileButton.Size = new System.Drawing.Size(88, 34);
             this.removePlaylistFileButton.TabIndex = 44;
@@ -722,7 +720,7 @@
             // addPlaylistFileButton
             // 
             this.addPlaylistFileButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.addPlaylistFileButton.Location = new System.Drawing.Point(585, 729);
+            this.addPlaylistFileButton.Location = new System.Drawing.Point(587, 758);
             this.addPlaylistFileButton.Name = "addPlaylistFileButton";
             this.addPlaylistFileButton.Size = new System.Drawing.Size(88, 34);
             this.addPlaylistFileButton.TabIndex = 43;
@@ -733,7 +731,7 @@
             // removeURLVideoButton
             // 
             this.removeURLVideoButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.removeURLVideoButton.Location = new System.Drawing.Point(303, 729);
+            this.removeURLVideoButton.Location = new System.Drawing.Point(305, 758);
             this.removeURLVideoButton.Name = "removeURLVideoButton";
             this.removeURLVideoButton.Size = new System.Drawing.Size(88, 34);
             this.removeURLVideoButton.TabIndex = 46;
@@ -744,7 +742,7 @@
             // addURLVideoButton
             // 
             this.addURLVideoButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.addURLVideoButton.Location = new System.Drawing.Point(209, 729);
+            this.addURLVideoButton.Location = new System.Drawing.Point(211, 758);
             this.addURLVideoButton.Name = "addURLVideoButton";
             this.addURLVideoButton.Size = new System.Drawing.Size(88, 34);
             this.addURLVideoButton.TabIndex = 45;
@@ -755,7 +753,7 @@
             // removeVideoFileButton
             // 
             this.removeVideoFileButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.removeVideoFileButton.Location = new System.Drawing.Point(115, 729);
+            this.removeVideoFileButton.Location = new System.Drawing.Point(117, 758);
             this.removeVideoFileButton.Name = "removeVideoFileButton";
             this.removeVideoFileButton.Size = new System.Drawing.Size(88, 34);
             this.removeVideoFileButton.TabIndex = 48;
@@ -766,7 +764,7 @@
             // addVideoFileButton
             // 
             this.addVideoFileButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.2F);
-            this.addVideoFileButton.Location = new System.Drawing.Point(21, 729);
+            this.addVideoFileButton.Location = new System.Drawing.Point(23, 758);
             this.addVideoFileButton.Name = "addVideoFileButton";
             this.addVideoFileButton.Size = new System.Drawing.Size(88, 34);
             this.addVideoFileButton.TabIndex = 47;
@@ -777,7 +775,7 @@
             // axWindowsMediaPlayerLive
             // 
             this.axWindowsMediaPlayerLive.Enabled = true;
-            this.axWindowsMediaPlayerLive.Location = new System.Drawing.Point(786, 67);
+            this.axWindowsMediaPlayerLive.Location = new System.Drawing.Point(788, 96);
             this.axWindowsMediaPlayerLive.Name = "axWindowsMediaPlayerLive";
             this.axWindowsMediaPlayerLive.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerLive.OcxState")));
             this.axWindowsMediaPlayerLive.Size = new System.Drawing.Size(495, 280);
@@ -786,11 +784,21 @@
             // transpCtrlLive
             // 
             this.transpCtrlLive.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrlLive.Location = new System.Drawing.Point(786, 67);
+            this.transpCtrlLive.Location = new System.Drawing.Point(788, 96);
             this.transpCtrlLive.Name = "transpCtrlLive";
             this.transpCtrlLive.Opacity = 100;
             this.transpCtrlLive.Size = new System.Drawing.Size(495, 280);
             this.transpCtrlLive.TabIndex = 50;
+            // 
+            // logoIconPicBox
+            // 
+            this.logoIconPicBox.BackColor = System.Drawing.Color.Transparent;
+            this.logoIconPicBox.Location = new System.Drawing.Point(1200, 12);
+            this.logoIconPicBox.Name = "logoIconPicBox";
+            this.logoIconPicBox.Size = new System.Drawing.Size(70, 70);
+            this.logoIconPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoIconPicBox.TabIndex = 51;
+            this.logoIconPicBox.TabStop = false;
             // 
             // Form1
             // 
@@ -798,7 +806,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1295, 776);
+            this.ClientSize = new System.Drawing.Size(1295, 818);
+            this.Controls.Add(this.logoIconPicBox);
             this.Controls.Add(this.transpCtrlLive);
             this.Controls.Add(this.axWindowsMediaPlayerLive);
             this.Controls.Add(this.removeVideoFileButton);
@@ -857,6 +866,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoIconPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -864,7 +874,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label broadcasterLabel;
+        public System.Windows.Forms.Label broadcasterLabel;
         private System.Windows.Forms.PictureBox liveAreaVideo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button liveButton1;
@@ -922,6 +932,7 @@
         private System.Windows.Forms.Button addVideoFileButton;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerLive;
         private TransparentControl transpCtrlLive;
+        public System.Windows.Forms.PictureBox logoIconPicBox;
     }
 }
 

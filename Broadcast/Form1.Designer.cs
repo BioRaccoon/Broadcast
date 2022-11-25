@@ -42,6 +42,8 @@
             this.previewBox = new System.Windows.Forms.GroupBox();
             this.transpCtrl10 = new Broadcast.TransparentControl();
             this.transpCtrl9 = new Broadcast.TransparentControl();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.transpCtrl8 = new Broadcast.TransparentControl();
             this.transpCtrl7 = new Broadcast.TransparentControl();
             this.transpCtrl6 = new Broadcast.TransparentControl();
@@ -84,12 +86,10 @@
             this.addURLVideoButton = new System.Windows.Forms.Button();
             this.removeVideoFileButton = new System.Windows.Forms.Button();
             this.addVideoFileButton = new System.Windows.Forms.Button();
-            this.axWindowsMediaPlayerLive = new AxWMPLib.AxWindowsMediaPlayer();
             this.logoIconPicBox = new System.Windows.Forms.PictureBox();
+            this.axWindowsMediaPlayerLive = new AxWMPLib.AxWindowsMediaPlayer();
+            this.liveWebBrowser = new System.Windows.Forms.WebBrowser();
             this.transpCtrlLive = new Broadcast.TransparentControl();
-            this.webVideoBrowser = new System.Windows.Forms.WebBrowser();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.liveAreaVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.previewBox.SuspendLayout();
@@ -102,8 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoIconPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLive)).BeginInit();
             this.SuspendLayout();
             // 
             // broadcasterLabel
@@ -113,9 +113,9 @@
             this.broadcasterLabel.Location = new System.Drawing.Point(11, 18);
             this.broadcasterLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.broadcasterLabel.Name = "broadcasterLabel";
-            this.broadcasterLabel.Size = new System.Drawing.Size(738, 54);
+            this.broadcasterLabel.Size = new System.Drawing.Size(700, 66);
             this.broadcasterLabel.TabIndex = 5;
-            this.broadcasterLabel.Text = "INDES - BROADCASTER - J&R TV";
+            this.broadcasterLabel.Text = "INDES - BROADCASTER";
             this.broadcasterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -126,7 +126,7 @@
             this.label1.Location = new System.Drawing.Point(966, 383);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 28);
+            this.label1.Size = new System.Drawing.Size(143, 34);
             this.label1.TabIndex = 13;
             this.label1.Text = "MIX LIVE";
             // 
@@ -238,9 +238,9 @@
             // previewBox
             // 
             this.previewBox.BackColor = System.Drawing.SystemColors.Control;
+            this.previewBox.Controls.Add(this.transpCtrl10);
             this.previewBox.Controls.Add(this.transpCtrl9);
             this.previewBox.Controls.Add(this.webBrowser1);
-            this.previewBox.Controls.Add(this.transpCtrl10);
             this.previewBox.Controls.Add(this.webBrowser2);
             this.previewBox.Controls.Add(this.transpCtrl8);
             this.previewBox.Controls.Add(this.transpCtrl7);
@@ -277,7 +277,6 @@
             this.transpCtrl10.TabIndex = 17;
             this.transpCtrl10.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl10_DragDrop);
             this.transpCtrl10.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl10_DragEnter);
-            this.transpCtrl10.Paint += new System.Windows.Forms.PaintEventHandler(this.transpCtrl10_Paint);
             // 
             // transpCtrl9
             // 
@@ -289,6 +288,23 @@
             this.transpCtrl9.TabIndex = 17;
             this.transpCtrl9.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl9_DragDrop);
             this.transpCtrl9.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl9_DragEnter);
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(639, 18);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(120, 120);
+            this.webBrowser1.TabIndex = 19;
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(639, 142);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(120, 120);
+            this.webBrowser2.TabIndex = 20;
+            this.webBrowser2.Url = new System.Uri("", System.UriKind.Relative);
             // 
             // transpCtrl8
             // 
@@ -311,7 +327,6 @@
             this.transpCtrl7.TabIndex = 17;
             this.transpCtrl7.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl7_DragDrop);
             this.transpCtrl7.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl7_DragEnter);
-            this.transpCtrl7.Paint += new System.Windows.Forms.PaintEventHandler(this.transpCtrl7_Paint);
             // 
             // transpCtrl6
             // 
@@ -600,9 +615,10 @@
             // 
             this.videoFiles.AllowDrop = true;
             this.videoFiles.FormattingEnabled = true;
+            this.videoFiles.ItemHeight = 16;
             this.videoFiles.Location = new System.Drawing.Point(23, 412);
             this.videoFiles.Name = "videoFiles";
-            this.videoFiles.Size = new System.Drawing.Size(182, 316);
+            this.videoFiles.Size = new System.Drawing.Size(182, 308);
             this.videoFiles.TabIndex = 33;
             this.videoFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
             // 
@@ -610,9 +626,10 @@
             // 
             this.CamerasBox.AllowDrop = true;
             this.CamerasBox.FormattingEnabled = true;
+            this.CamerasBox.ItemHeight = 16;
             this.CamerasBox.Location = new System.Drawing.Point(399, 412);
             this.CamerasBox.Name = "CamerasBox";
-            this.CamerasBox.Size = new System.Drawing.Size(182, 147);
+            this.CamerasBox.Size = new System.Drawing.Size(182, 132);
             this.CamerasBox.TabIndex = 35;
             this.CamerasBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CamerasBox_MouseDown);
             // 
@@ -620,9 +637,10 @@
             // 
             this.recordsList.AllowDrop = true;
             this.recordsList.FormattingEnabled = true;
+            this.recordsList.ItemHeight = 16;
             this.recordsList.Location = new System.Drawing.Point(399, 620);
             this.recordsList.Name = "recordsList";
-            this.recordsList.Size = new System.Drawing.Size(182, 108);
+            this.recordsList.Size = new System.Drawing.Size(182, 100);
             this.recordsList.TabIndex = 36;
             this.recordsList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.recordsList_MouseDown);
             // 
@@ -630,9 +648,10 @@
             // 
             this.urlVideos.AllowDrop = true;
             this.urlVideos.FormattingEnabled = true;
+            this.urlVideos.ItemHeight = 16;
             this.urlVideos.Location = new System.Drawing.Point(211, 412);
             this.urlVideos.Name = "urlVideos";
-            this.urlVideos.Size = new System.Drawing.Size(182, 316);
+            this.urlVideos.Size = new System.Drawing.Size(182, 308);
             this.urlVideos.TabIndex = 37;
             this.urlVideos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.urlVideos_MouseDown);
             // 
@@ -640,9 +659,10 @@
             // 
             this.broadcastPlaylist.AllowDrop = true;
             this.broadcastPlaylist.FormattingEnabled = true;
+            this.broadcastPlaylist.ItemHeight = 16;
             this.broadcastPlaylist.Location = new System.Drawing.Point(587, 412);
             this.broadcastPlaylist.Name = "broadcastPlaylist";
-            this.broadcastPlaylist.Size = new System.Drawing.Size(182, 316);
+            this.broadcastPlaylist.Size = new System.Drawing.Size(182, 308);
             this.broadcastPlaylist.TabIndex = 38;
             this.broadcastPlaylist.DragDrop += new System.Windows.Forms.DragEventHandler(this.broadcastPlaylist_DragDrop);
             this.broadcastPlaylist.DragEnter += new System.Windows.Forms.DragEventHandler(this.broadcastPlaylist_DragEnter);
@@ -757,6 +777,15 @@
             this.addVideoFileButton.UseVisualStyleBackColor = true;
             this.addVideoFileButton.Click += new System.EventHandler(this.addVideoFileButton_Click);
             // 
+            // logoIconPicBox
+            // 
+            this.logoIconPicBox.Location = new System.Drawing.Point(1187, 9);
+            this.logoIconPicBox.Name = "logoIconPicBox";
+            this.logoIconPicBox.Size = new System.Drawing.Size(75, 75);
+            this.logoIconPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoIconPicBox.TabIndex = 0;
+            this.logoIconPicBox.TabStop = false;
+            // 
             // axWindowsMediaPlayerLive
             // 
             this.axWindowsMediaPlayerLive.Enabled = true;
@@ -766,14 +795,12 @@
             this.axWindowsMediaPlayerLive.Size = new System.Drawing.Size(495, 280);
             this.axWindowsMediaPlayerLive.TabIndex = 49;
             // 
-            // logoIconPicBox
+            // liveWebBrowser
             // 
-            this.logoIconPicBox.Location = new System.Drawing.Point(1187, 9);
-            this.logoIconPicBox.Name = "logoIconPicBox";
-            this.logoIconPicBox.Size = new System.Drawing.Size(75, 75);
-            this.logoIconPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logoIconPicBox.TabIndex = 0;
-            this.logoIconPicBox.TabStop = false;
+            this.liveWebBrowser.Location = new System.Drawing.Point(788, 96);
+            this.liveWebBrowser.Name = "liveWebBrowser";
+            this.liveWebBrowser.Size = new System.Drawing.Size(495, 280);
+            this.liveWebBrowser.TabIndex = 51;
             // 
             // transpCtrlLive
             // 
@@ -784,32 +811,6 @@
             this.transpCtrlLive.Size = new System.Drawing.Size(495, 280);
             this.transpCtrlLive.TabIndex = 50;
             // 
-            // webVideoBrowser
-            // 
-            this.webVideoBrowser.Location = new System.Drawing.Point(891, 11);
-            this.webVideoBrowser.Margin = new System.Windows.Forms.Padding(2);
-            this.webVideoBrowser.MinimumSize = new System.Drawing.Size(15, 16);
-            this.webVideoBrowser.Name = "webVideoBrowser";
-            this.webVideoBrowser.Size = new System.Drawing.Size(144, 77);
-            this.webVideoBrowser.TabIndex = 51;
-            this.webVideoBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webVideoBrowser_DocumentCompleted);
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(639, 19);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(120, 120);
-            this.webBrowser1.TabIndex = 19;
-            // 
-            // webBrowser2
-            // 
-            this.webBrowser2.Location = new System.Drawing.Point(644, 145);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(120, 120);
-            this.webBrowser2.TabIndex = 20;
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -817,7 +818,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1295, 818);
-            this.Controls.Add(this.webVideoBrowser);
+            this.Controls.Add(this.liveWebBrowser);
             this.Controls.Add(this.transpCtrlLive);
             this.Controls.Add(this.logoIconPicBox);
             this.Controls.Add(this.axWindowsMediaPlayerLive);
@@ -874,8 +875,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoIconPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLive)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -940,9 +941,9 @@
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerLive;
         private TransparentControl transpCtrlLive;
         public System.Windows.Forms.PictureBox logoIconPicBox;
-        private System.Windows.Forms.WebBrowser webVideoBrowser;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.WebBrowser liveWebBrowser;
     }
 }
 

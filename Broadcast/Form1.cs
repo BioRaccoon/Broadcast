@@ -4,7 +4,9 @@ using Broadcast.Properties;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Web;
 using System.Windows.Forms;
 
 namespace Broadcast
@@ -24,12 +26,16 @@ namespace Broadcast
         MJPEGStream localStream1;
         MJPEGStream localStream2;
         MJPEGStream liveStream;
-        Recorder recorder;
+        Recorder screenRecorder;
+        //AudioRecorder audioRecorder;
 
         String broadcastFolder = "";
         String playlistFolder = "";
         String resourcesFolder = "";
         String recordsFolder = "";
+        String dateNow = "";
+        String url1 = "";
+        String url2 = "";
 
         private void pictureBox1_NewFrame(object sender, NewFrameEventArgs eventargs)
         {
@@ -99,6 +105,7 @@ namespace Broadcast
             transpCtrl10.AllowDrop = true;
             transpCtrlLive.SendToBack();
             axWindowsMediaPlayerLive.SendToBack();
+            liveWebBrowser.DocumentText = string.Format("", "");
             axWindowsMediaPlayerLive.uiMode = "none";
             axWindowsMediaPlayerLive.settings.mute = true;
             axWindowsMediaPlayerLive.stretchToFit = true;
@@ -278,6 +285,7 @@ namespace Broadcast
                     axWindowsMediaPlayerLive.URL = "";
                     transpCtrlLive.SendToBack();
                     axWindowsMediaPlayerLive.SendToBack();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     liveVideoCaptureDevice = localVideoCaptureDevice1;
                     liveVideoCaptureDevice.NewFrame += LiveAreaCamera_NewFrame;
                     liveVideoCaptureDevice.NewFrame += new NewFrameEventHandler(LiveAreaCamera_NewFrame);
@@ -300,6 +308,7 @@ namespace Broadcast
                     axWindowsMediaPlayerLive.URL = "";
                     transpCtrlLive.SendToBack();
                     axWindowsMediaPlayerLive.SendToBack();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     liveStream = localStream1;
                     liveStream.NewFrame += new NewFrameEventHandler(LiveAreaCamera_NewFrame);
                     liveStream.Start();
@@ -364,6 +373,7 @@ namespace Broadcast
                     axWindowsMediaPlayerLive.URL = "";
                     transpCtrlLive.SendToBack();
                     axWindowsMediaPlayerLive.SendToBack();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     liveVideoCaptureDevice = localVideoCaptureDevice2;
                     liveVideoCaptureDevice.NewFrame += LiveAreaCamera_NewFrame;
                     liveVideoCaptureDevice.NewFrame += new NewFrameEventHandler(LiveAreaCamera_NewFrame);
@@ -386,6 +396,7 @@ namespace Broadcast
                     axWindowsMediaPlayerLive.URL = "";
                     transpCtrlLive.SendToBack();
                     axWindowsMediaPlayerLive.SendToBack();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     liveStream = localStream2;
                     liveStream.NewFrame += new NewFrameEventHandler(LiveAreaCamera_NewFrame);
                     liveStream.Start();
@@ -419,6 +430,7 @@ namespace Broadcast
                 {
                     disableAllButtons();
                     disableLivePicture();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer1.URL;
                     axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
                     liveButton3.BackColor = Color.Lime;
@@ -429,6 +441,7 @@ namespace Broadcast
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton3.BackColor = Color.Red;
             }
         }
@@ -441,6 +454,7 @@ namespace Broadcast
                 {
                     disableAllButtons();
                     disableLivePicture();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer2.URL;
                     axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer2.Ctlcontrols.currentPosition;
                     liveButton4.BackColor = Color.Lime;
@@ -451,6 +465,7 @@ namespace Broadcast
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton4.BackColor = Color.Red;
             }
         }
@@ -463,6 +478,7 @@ namespace Broadcast
                 {
                     disableAllButtons();
                     disableLivePicture();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer3.URL;
                     axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer3.Ctlcontrols.currentPosition;
                     liveButton5.BackColor = Color.Lime;
@@ -473,6 +489,7 @@ namespace Broadcast
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton5.BackColor = Color.Red;
             }
         }
@@ -485,6 +502,7 @@ namespace Broadcast
                 {
                     disableAllButtons();
                     disableLivePicture();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer4.URL;
                     axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer4.Ctlcontrols.currentPosition;
                     liveButton6.BackColor = Color.Lime;
@@ -495,6 +513,7 @@ namespace Broadcast
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton6.BackColor = Color.Red;
             }
         }
@@ -507,6 +526,7 @@ namespace Broadcast
                 {
                     disableAllButtons();
                     disableLivePicture();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer5.URL;
                     axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer5.Ctlcontrols.currentPosition;
                     liveButton7.BackColor = Color.Lime;
@@ -517,6 +537,7 @@ namespace Broadcast
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton7.BackColor = Color.Red;
             }
         }
@@ -529,6 +550,7 @@ namespace Broadcast
                 {
                     disableAllButtons();
                     disableLivePicture();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer6.URL;
                     axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer6.Ctlcontrols.currentPosition;
                     liveButton8.BackColor = Color.Lime;
@@ -539,6 +561,7 @@ namespace Broadcast
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton8.BackColor = Color.Red;
             }
         }
@@ -551,6 +574,7 @@ namespace Broadcast
                 {
                     disableAllButtons();
                     disableLivePicture();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer7.URL;
                     axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer7.Ctlcontrols.currentPosition;
                     liveButton9.BackColor = Color.Lime;
@@ -561,6 +585,7 @@ namespace Broadcast
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton9.BackColor = Color.Red;
             }
         }
@@ -573,6 +598,7 @@ namespace Broadcast
                 {
                     disableAllButtons();
                     disableLivePicture();
+                    liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                     axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer8.URL;
                     axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer8.Ctlcontrols.currentPosition;
                     liveButton10.BackColor = Color.Lime;
@@ -583,6 +609,7 @@ namespace Broadcast
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton10.BackColor = Color.Red;
             }
         }
@@ -591,23 +618,33 @@ namespace Broadcast
         {
             if (liveButton11.BackColor == Color.Red)
             {
-                disableAllButtons();
-                disableLivePicture();
-                axWindowsMediaPlayerLive.URL = "";
-                transpCtrlLive.SendToBack();
-                axWindowsMediaPlayerLive.SendToBack();
-                webVideoBrowser.BringToFront();
+                if (url1 != "")
+                {
+                    disableAllButtons();
+                    disableLivePicture();
+                    axWindowsMediaPlayerLive.URL = "";
+                    transpCtrlLive.SendToBack();
+                    axWindowsMediaPlayerLive.SendToBack();
+                    liveWebBrowser.BringToFront();
 
-                webVideoBrowser.DocumentText = webBrowser1.DocumentText;
-                liveButton11.BackColor = Color.Lime;
+                    var embed = "<html><head>" +
+                 "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>" +
+                 "</head><body>" +
+                 "<iframe width=\"495\" height=\"280\" src=\"{0}\"" +
+                 "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                 "</body></html>";
+                    string liveURL1 = url1.Replace("&mute=1&controls=0", "");
+                    liveWebBrowser.DocumentText = string.Format(embed, liveURL1);
+                    liveButton11.BackColor = Color.Lime;
+                }
             }
             else
             {
-                webVideoBrowser.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
-                webVideoBrowser.DocumentText = "";
+                liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton11.BackColor = Color.Red;
             }
         }
@@ -616,24 +653,33 @@ namespace Broadcast
         {
             if (liveButton12.BackColor == Color.Red)
             {
+                if (url2 != "")
+                {
+                    disableAllButtons();
+                    disableLivePicture();
+                    axWindowsMediaPlayerLive.URL = "";
+                    transpCtrlLive.SendToBack();
+                    axWindowsMediaPlayerLive.SendToBack();
+                    liveWebBrowser.BringToFront();
 
-                disableAllButtons();
-                disableLivePicture();
-                axWindowsMediaPlayerLive.URL = "";
-                transpCtrlLive.SendToBack();
-                axWindowsMediaPlayerLive.SendToBack();
-                webVideoBrowser.BringToFront();
-
-                webVideoBrowser.DocumentText = webBrowser2.DocumentText;
-                liveButton12.BackColor = Color.Lime;
+                    var embed = "<html><head>" +
+                  "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>" +
+                  "</head><body>" +
+                  "<iframe width=\"495\" height=\"280\" src=\"{0}\"" +
+                  "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                  "</body></html>";
+                    string liveURL2 = url2.Replace("&mute=1&controls=0", "");
+                    liveWebBrowser.DocumentText = string.Format(embed, liveURL2);
+                    liveButton12.BackColor = Color.Lime;
+                }
             }
             else
             {
-                webVideoBrowser.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
-                webVideoBrowser.DocumentText = "";
+                liveWebBrowser.DocumentText = string.Format("", "");
                 liveButton12.BackColor = Color.Red;
             }
         }
@@ -1061,25 +1107,13 @@ namespace Broadcast
                 var embed = "<html><head>" +
                 "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
                 "</head><body>" +
-                "<iframe width=\"300\" src=\"{0}\"" +
+                "<iframe width=\"120\" height=\"120\" src=\"{0}\"" +
                 "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
                 "</body></html>";
-                var url = "https://www.youtube.com/embed/" + data + "";
-                url = url.Replace("https://www.youtube.com/watch?v=", "");
-                webBrowser1.DocumentText = string.Format(embed, url);
-                Console.WriteLine(url);
-            }
-            else
-            {
-                data = e.Data.GetData(DataFormats.FileDrop);
-                if (data != null)
-                {
-                    var fileNames = data as String[];
-                    if (fileNames.Length > 0)
-                    {
-                        //
-                    }
-                }
+                var videoId = getVideoID(data + "");
+                url1 = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&loop=1&mute=1&controls=0";
+                webBrowser1.DocumentText = string.Format(embed, url1);
+                webBrowser1.BringToFront();
             }
         }
 
@@ -1091,25 +1125,35 @@ namespace Broadcast
                 var embed = "<html><head>" +
                 "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
                 "</head><body>" +
-                "<iframe width=\"300\" src=\"{0}\"" +
+                "<iframe width=\"120\" height=\"120\" src=\"{0}\"" +
                 "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
                 "</body></html>";
-                var url = "https://www.youtube.com/embed/" + data + "";
-                url = url.Replace("https://www.youtube.com/watch?v=", "");
-                webBrowser2.DocumentText = string.Format(embed, url);
+                var videoId = getVideoID(data + "");
+                url2 = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&loop=1&mute=1&controls=0";
+                webBrowser2.DocumentText = string.Format(embed, url2);
+                webBrowser2.BringToFront();
+            }
+        }
+
+        public string getVideoID(string url)
+        {
+            var uri = new Uri(url);
+
+            // you can check host here => uri.Host <= "www.youtube.com"
+
+            var query = HttpUtility.ParseQueryString(uri.Query);
+
+            var videoId = string.Empty;
+
+            if (query.AllKeys.Contains("v"))
+            {
+                videoId = query["v"];
             }
             else
             {
-                data = e.Data.GetData(DataFormats.FileDrop);
-                if (data != null)
-                {
-                    var fileNames = data as String[];
-                    if (fileNames.Length > 0)
-                    {
-                        //
-                    }
-                }
+                videoId = uri.Segments.Last();
             }
+            return videoId;
         }
 
         private void transpCtrl1_DragEnter(object sender, DragEventArgs e)
@@ -1353,18 +1397,20 @@ namespace Broadcast
         {
             if (recordScreenButton.BackColor == Color.Red)
             {
-                string filename = DateTime.Now.ToString();
+                dateNow = DateTime.Now.ToString();
                 var charsToRemove = new string[] { "/", ":" };
                 foreach (var c in charsToRemove)
                 {
-                    filename = filename.Replace(c, "-");
+                    dateNow = dateNow.Replace(c, "-");
                 }
-                recorder = new Recorder(new ScreenRecorder(recordsFolder + filename + ".mp4", 30, SharpAvi.KnownFourCCs.Codecs.MotionJpeg, 60));
+                screenRecorder = new Recorder(new ScreenRecorder(recordsFolder + dateNow + ".mp4", 30, SharpAvi.KnownFourCCs.Codecs.MotionJpeg, 60));
+                //audioRecorder = new AudioRecorder(recordsFolder + dateNow + ".wav");
                 recordScreenButton.BackColor = Color.Lime;
             }
             else
             {
-                recorder.Dispose();
+                screenRecorder.Dispose();
+                //audioRecorder.Dispose();
                 recordsList.Items.Clear();
                 string[] recordsFiles = Directory.GetFiles(recordsFolder);
                 foreach (string file in recordsFiles)
@@ -1416,36 +1462,5 @@ namespace Broadcast
             Form2 customizationForm = new Form2(this);
             customizationForm.ShowDialog();
         }
-
-        private void webVideoBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            if (IsHorizontalScrollbarPresent)
-            {
-                webVideoBrowser.Size = new Size(webVideoBrowser.Document.Body.ScrollRectangle.Width, webVideoBrowser.Document.Body.ScrollRectangle.Height);
-                //Form1.ActiveForm.Size = new Size(webVideoBrowser.Document.Body.ScrollRectangle.Width, webVideoBrowser.Document.Body.ScrollRectangle.Height);
-            }
-        }
-
-        public bool IsHorizontalScrollbarPresent
-        {
-            get
-            {
-                var widthofScrollableArea = webVideoBrowser.Document.Body.ScrollRectangle.Width;
-                var widthofControl = webVideoBrowser.Document.Window.Size.Width;
-
-                return widthofScrollableArea > widthofControl;
-            }
-        }
-
-        private void transpCtrl10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void transpCtrl7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
-
 }

@@ -40,9 +40,17 @@
             this.liveAreaVideo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.previewBox = new System.Windows.Forms.GroupBox();
+            this.transpCtrl10 = new Broadcast.TransparentControl();
+            this.transpCtrl9 = new Broadcast.TransparentControl();
+            this.transpCtrl8 = new Broadcast.TransparentControl();
+            this.transpCtrl7 = new Broadcast.TransparentControl();
+            this.transpCtrl6 = new Broadcast.TransparentControl();
+            this.transpCtrl5 = new Broadcast.TransparentControl();
+            this.transpCtrl4 = new Broadcast.TransparentControl();
+            this.transpCtrl3 = new Broadcast.TransparentControl();
+            this.transpCtrl1 = new Broadcast.TransparentControl();
+            this.transpCtrl2 = new Broadcast.TransparentControl();
             this.axWindowsMediaPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.axWindowsMediaPlayer10 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.axWindowsMediaPlayer9 = new AxWMPLib.AxWindowsMediaPlayer();
             this.axWindowsMediaPlayer8 = new AxWMPLib.AxWindowsMediaPlayer();
             this.axWindowsMediaPlayer7 = new AxWMPLib.AxWindowsMediaPlayer();
             this.axWindowsMediaPlayer6 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -79,22 +87,13 @@
             this.axWindowsMediaPlayerLive = new AxWMPLib.AxWindowsMediaPlayer();
             this.logoIconPicBox = new System.Windows.Forms.PictureBox();
             this.transpCtrlLive = new Broadcast.TransparentControl();
-            this.transpCtrl10 = new Broadcast.TransparentControl();
-            this.transpCtrl9 = new Broadcast.TransparentControl();
-            this.transpCtrl8 = new Broadcast.TransparentControl();
-            this.transpCtrl7 = new Broadcast.TransparentControl();
-            this.transpCtrl6 = new Broadcast.TransparentControl();
-            this.transpCtrl5 = new Broadcast.TransparentControl();
-            this.transpCtrl4 = new Broadcast.TransparentControl();
-            this.transpCtrl3 = new Broadcast.TransparentControl();
-            this.transpCtrl1 = new Broadcast.TransparentControl();
-            this.transpCtrl2 = new Broadcast.TransparentControl();
+            this.webVideoBrowser = new System.Windows.Forms.WebBrowser();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.liveAreaVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.previewBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer6)).BeginInit();
@@ -114,7 +113,7 @@
             this.broadcasterLabel.Location = new System.Drawing.Point(11, 18);
             this.broadcasterLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.broadcasterLabel.Name = "broadcasterLabel";
-            this.broadcasterLabel.Size = new System.Drawing.Size(910, 66);
+            this.broadcasterLabel.Size = new System.Drawing.Size(738, 54);
             this.broadcasterLabel.TabIndex = 5;
             this.broadcasterLabel.Text = "INDES - BROADCASTER - J&R TV";
             this.broadcasterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,7 +126,7 @@
             this.label1.Location = new System.Drawing.Point(966, 383);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 34);
+            this.label1.Size = new System.Drawing.Size(115, 28);
             this.label1.TabIndex = 13;
             this.label1.Text = "MIX LIVE";
             // 
@@ -239,8 +238,10 @@
             // previewBox
             // 
             this.previewBox.BackColor = System.Drawing.SystemColors.Control;
-            this.previewBox.Controls.Add(this.transpCtrl10);
             this.previewBox.Controls.Add(this.transpCtrl9);
+            this.previewBox.Controls.Add(this.webBrowser1);
+            this.previewBox.Controls.Add(this.transpCtrl10);
+            this.previewBox.Controls.Add(this.webBrowser2);
             this.previewBox.Controls.Add(this.transpCtrl8);
             this.previewBox.Controls.Add(this.transpCtrl7);
             this.previewBox.Controls.Add(this.transpCtrl6);
@@ -250,8 +251,6 @@
             this.previewBox.Controls.Add(this.transpCtrl1);
             this.previewBox.Controls.Add(this.transpCtrl2);
             this.previewBox.Controls.Add(this.axWindowsMediaPlayer2);
-            this.previewBox.Controls.Add(this.axWindowsMediaPlayer10);
-            this.previewBox.Controls.Add(this.axWindowsMediaPlayer9);
             this.previewBox.Controls.Add(this.axWindowsMediaPlayer8);
             this.previewBox.Controls.Add(this.axWindowsMediaPlayer7);
             this.previewBox.Controls.Add(this.axWindowsMediaPlayer6);
@@ -268,6 +267,118 @@
             this.previewBox.TabIndex = 22;
             this.previewBox.TabStop = false;
             // 
+            // transpCtrl10
+            // 
+            this.transpCtrl10.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl10.Location = new System.Drawing.Point(639, 142);
+            this.transpCtrl10.Name = "transpCtrl10";
+            this.transpCtrl10.Opacity = 100;
+            this.transpCtrl10.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl10.TabIndex = 17;
+            this.transpCtrl10.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl10_DragDrop);
+            this.transpCtrl10.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl10_DragEnter);
+            this.transpCtrl10.Paint += new System.Windows.Forms.PaintEventHandler(this.transpCtrl10_Paint);
+            // 
+            // transpCtrl9
+            // 
+            this.transpCtrl9.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl9.Location = new System.Drawing.Point(639, 18);
+            this.transpCtrl9.Name = "transpCtrl9";
+            this.transpCtrl9.Opacity = 100;
+            this.transpCtrl9.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl9.TabIndex = 17;
+            this.transpCtrl9.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl9_DragDrop);
+            this.transpCtrl9.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl9_DragEnter);
+            // 
+            // transpCtrl8
+            // 
+            this.transpCtrl8.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl8.Location = new System.Drawing.Point(513, 142);
+            this.transpCtrl8.Name = "transpCtrl8";
+            this.transpCtrl8.Opacity = 100;
+            this.transpCtrl8.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl8.TabIndex = 17;
+            this.transpCtrl8.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl8_DragDrop);
+            this.transpCtrl8.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl8_DragEnter);
+            // 
+            // transpCtrl7
+            // 
+            this.transpCtrl7.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl7.Location = new System.Drawing.Point(513, 18);
+            this.transpCtrl7.Name = "transpCtrl7";
+            this.transpCtrl7.Opacity = 100;
+            this.transpCtrl7.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl7.TabIndex = 17;
+            this.transpCtrl7.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl7_DragDrop);
+            this.transpCtrl7.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl7_DragEnter);
+            this.transpCtrl7.Paint += new System.Windows.Forms.PaintEventHandler(this.transpCtrl7_Paint);
+            // 
+            // transpCtrl6
+            // 
+            this.transpCtrl6.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl6.Location = new System.Drawing.Point(387, 142);
+            this.transpCtrl6.Name = "transpCtrl6";
+            this.transpCtrl6.Opacity = 100;
+            this.transpCtrl6.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl6.TabIndex = 18;
+            this.transpCtrl6.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl6_DragDrop);
+            this.transpCtrl6.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl6_DragEnter);
+            // 
+            // transpCtrl5
+            // 
+            this.transpCtrl5.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl5.Location = new System.Drawing.Point(387, 18);
+            this.transpCtrl5.Name = "transpCtrl5";
+            this.transpCtrl5.Opacity = 100;
+            this.transpCtrl5.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl5.TabIndex = 17;
+            this.transpCtrl5.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl5_DragDrop);
+            this.transpCtrl5.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl5_DragEnter);
+            // 
+            // transpCtrl4
+            // 
+            this.transpCtrl4.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl4.Location = new System.Drawing.Point(261, 142);
+            this.transpCtrl4.Name = "transpCtrl4";
+            this.transpCtrl4.Opacity = 100;
+            this.transpCtrl4.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl4.TabIndex = 17;
+            this.transpCtrl4.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl4_DragDrop);
+            this.transpCtrl4.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl4_DragEnter);
+            // 
+            // transpCtrl3
+            // 
+            this.transpCtrl3.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl3.Location = new System.Drawing.Point(261, 18);
+            this.transpCtrl3.Name = "transpCtrl3";
+            this.transpCtrl3.Opacity = 100;
+            this.transpCtrl3.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl3.TabIndex = 17;
+            this.transpCtrl3.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl3_DragDrop);
+            this.transpCtrl3.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl3_DragEnter);
+            // 
+            // transpCtrl1
+            // 
+            this.transpCtrl1.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl1.Location = new System.Drawing.Point(135, 18);
+            this.transpCtrl1.Name = "transpCtrl1";
+            this.transpCtrl1.Opacity = 100;
+            this.transpCtrl1.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl1.TabIndex = 16;
+            this.transpCtrl1.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl1_DragDrop);
+            this.transpCtrl1.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl1_DragEnter);
+            // 
+            // transpCtrl2
+            // 
+            this.transpCtrl2.BackColor = System.Drawing.Color.Transparent;
+            this.transpCtrl2.Location = new System.Drawing.Point(135, 142);
+            this.transpCtrl2.Name = "transpCtrl2";
+            this.transpCtrl2.Opacity = 100;
+            this.transpCtrl2.Size = new System.Drawing.Size(120, 120);
+            this.transpCtrl2.TabIndex = 15;
+            this.transpCtrl2.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl2_DragDrop);
+            this.transpCtrl2.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl2_DragEnter);
+            // 
             // axWindowsMediaPlayer2
             // 
             this.axWindowsMediaPlayer2.Enabled = true;
@@ -276,24 +387,6 @@
             this.axWindowsMediaPlayer2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer2.OcxState")));
             this.axWindowsMediaPlayer2.Size = new System.Drawing.Size(120, 120);
             this.axWindowsMediaPlayer2.TabIndex = 6;
-            // 
-            // axWindowsMediaPlayer10
-            // 
-            this.axWindowsMediaPlayer10.Enabled = true;
-            this.axWindowsMediaPlayer10.Location = new System.Drawing.Point(639, 142);
-            this.axWindowsMediaPlayer10.Name = "axWindowsMediaPlayer10";
-            this.axWindowsMediaPlayer10.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer10.OcxState")));
-            this.axWindowsMediaPlayer10.Size = new System.Drawing.Size(120, 120);
-            this.axWindowsMediaPlayer10.TabIndex = 14;
-            // 
-            // axWindowsMediaPlayer9
-            // 
-            this.axWindowsMediaPlayer9.Enabled = true;
-            this.axWindowsMediaPlayer9.Location = new System.Drawing.Point(639, 18);
-            this.axWindowsMediaPlayer9.Name = "axWindowsMediaPlayer9";
-            this.axWindowsMediaPlayer9.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer9.OcxState")));
-            this.axWindowsMediaPlayer9.Size = new System.Drawing.Size(120, 120);
-            this.axWindowsMediaPlayer9.TabIndex = 13;
             // 
             // axWindowsMediaPlayer8
             // 
@@ -507,10 +600,9 @@
             // 
             this.videoFiles.AllowDrop = true;
             this.videoFiles.FormattingEnabled = true;
-            this.videoFiles.ItemHeight = 16;
             this.videoFiles.Location = new System.Drawing.Point(23, 412);
             this.videoFiles.Name = "videoFiles";
-            this.videoFiles.Size = new System.Drawing.Size(182, 324);
+            this.videoFiles.Size = new System.Drawing.Size(182, 316);
             this.videoFiles.TabIndex = 33;
             this.videoFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
             // 
@@ -518,10 +610,9 @@
             // 
             this.CamerasBox.AllowDrop = true;
             this.CamerasBox.FormattingEnabled = true;
-            this.CamerasBox.ItemHeight = 16;
             this.CamerasBox.Location = new System.Drawing.Point(399, 412);
             this.CamerasBox.Name = "CamerasBox";
-            this.CamerasBox.Size = new System.Drawing.Size(182, 148);
+            this.CamerasBox.Size = new System.Drawing.Size(182, 147);
             this.CamerasBox.TabIndex = 35;
             this.CamerasBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CamerasBox_MouseDown);
             // 
@@ -529,10 +620,9 @@
             // 
             this.recordsList.AllowDrop = true;
             this.recordsList.FormattingEnabled = true;
-            this.recordsList.ItemHeight = 16;
             this.recordsList.Location = new System.Drawing.Point(399, 620);
             this.recordsList.Name = "recordsList";
-            this.recordsList.Size = new System.Drawing.Size(182, 116);
+            this.recordsList.Size = new System.Drawing.Size(182, 108);
             this.recordsList.TabIndex = 36;
             this.recordsList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.recordsList_MouseDown);
             // 
@@ -540,10 +630,9 @@
             // 
             this.urlVideos.AllowDrop = true;
             this.urlVideos.FormattingEnabled = true;
-            this.urlVideos.ItemHeight = 16;
             this.urlVideos.Location = new System.Drawing.Point(211, 412);
             this.urlVideos.Name = "urlVideos";
-            this.urlVideos.Size = new System.Drawing.Size(182, 324);
+            this.urlVideos.Size = new System.Drawing.Size(182, 316);
             this.urlVideos.TabIndex = 37;
             this.urlVideos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.urlVideos_MouseDown);
             // 
@@ -551,10 +640,9 @@
             // 
             this.broadcastPlaylist.AllowDrop = true;
             this.broadcastPlaylist.FormattingEnabled = true;
-            this.broadcastPlaylist.ItemHeight = 16;
             this.broadcastPlaylist.Location = new System.Drawing.Point(587, 412);
             this.broadcastPlaylist.Name = "broadcastPlaylist";
-            this.broadcastPlaylist.Size = new System.Drawing.Size(182, 324);
+            this.broadcastPlaylist.Size = new System.Drawing.Size(182, 316);
             this.broadcastPlaylist.TabIndex = 38;
             this.broadcastPlaylist.DragDrop += new System.Windows.Forms.DragEventHandler(this.broadcastPlaylist_DragDrop);
             this.broadcastPlaylist.DragEnter += new System.Windows.Forms.DragEventHandler(this.broadcastPlaylist_DragEnter);
@@ -696,115 +784,31 @@
             this.transpCtrlLive.Size = new System.Drawing.Size(495, 280);
             this.transpCtrlLive.TabIndex = 50;
             // 
-            // transpCtrl10
+            // webVideoBrowser
             // 
-            this.transpCtrl10.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl10.Location = new System.Drawing.Point(639, 142);
-            this.transpCtrl10.Name = "transpCtrl10";
-            this.transpCtrl10.Opacity = 100;
-            this.transpCtrl10.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl10.TabIndex = 17;
-            this.transpCtrl10.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl10_DragDrop);
-            this.transpCtrl10.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl10_DragEnter);
+            this.webVideoBrowser.Location = new System.Drawing.Point(891, 11);
+            this.webVideoBrowser.Margin = new System.Windows.Forms.Padding(2);
+            this.webVideoBrowser.MinimumSize = new System.Drawing.Size(15, 16);
+            this.webVideoBrowser.Name = "webVideoBrowser";
+            this.webVideoBrowser.Size = new System.Drawing.Size(144, 77);
+            this.webVideoBrowser.TabIndex = 51;
+            this.webVideoBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webVideoBrowser_DocumentCompleted);
             // 
-            // transpCtrl9
+            // webBrowser1
             // 
-            this.transpCtrl9.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl9.Location = new System.Drawing.Point(639, 18);
-            this.transpCtrl9.Name = "transpCtrl9";
-            this.transpCtrl9.Opacity = 100;
-            this.transpCtrl9.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl9.TabIndex = 17;
-            this.transpCtrl9.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl9_DragDrop);
-            this.transpCtrl9.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl9_DragEnter);
+            this.webBrowser1.Location = new System.Drawing.Point(639, 19);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(120, 120);
+            this.webBrowser1.TabIndex = 19;
             // 
-            // transpCtrl8
+            // webBrowser2
             // 
-            this.transpCtrl8.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl8.Location = new System.Drawing.Point(513, 142);
-            this.transpCtrl8.Name = "transpCtrl8";
-            this.transpCtrl8.Opacity = 100;
-            this.transpCtrl8.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl8.TabIndex = 17;
-            this.transpCtrl8.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl8_DragDrop);
-            this.transpCtrl8.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl8_DragEnter);
-            // 
-            // transpCtrl7
-            // 
-            this.transpCtrl7.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl7.Location = new System.Drawing.Point(513, 18);
-            this.transpCtrl7.Name = "transpCtrl7";
-            this.transpCtrl7.Opacity = 100;
-            this.transpCtrl7.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl7.TabIndex = 17;
-            this.transpCtrl7.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl7_DragDrop);
-            this.transpCtrl7.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl7_DragEnter);
-            // 
-            // transpCtrl6
-            // 
-            this.transpCtrl6.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl6.Location = new System.Drawing.Point(387, 142);
-            this.transpCtrl6.Name = "transpCtrl6";
-            this.transpCtrl6.Opacity = 100;
-            this.transpCtrl6.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl6.TabIndex = 18;
-            this.transpCtrl6.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl6_DragDrop);
-            this.transpCtrl6.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl6_DragEnter);
-            // 
-            // transpCtrl5
-            // 
-            this.transpCtrl5.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl5.Location = new System.Drawing.Point(387, 18);
-            this.transpCtrl5.Name = "transpCtrl5";
-            this.transpCtrl5.Opacity = 100;
-            this.transpCtrl5.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl5.TabIndex = 17;
-            this.transpCtrl5.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl5_DragDrop);
-            this.transpCtrl5.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl5_DragEnter);
-            // 
-            // transpCtrl4
-            // 
-            this.transpCtrl4.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl4.Location = new System.Drawing.Point(261, 142);
-            this.transpCtrl4.Name = "transpCtrl4";
-            this.transpCtrl4.Opacity = 100;
-            this.transpCtrl4.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl4.TabIndex = 17;
-            this.transpCtrl4.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl4_DragDrop);
-            this.transpCtrl4.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl4_DragEnter);
-            // 
-            // transpCtrl3
-            // 
-            this.transpCtrl3.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl3.Location = new System.Drawing.Point(261, 18);
-            this.transpCtrl3.Name = "transpCtrl3";
-            this.transpCtrl3.Opacity = 100;
-            this.transpCtrl3.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl3.TabIndex = 17;
-            this.transpCtrl3.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl3_DragDrop);
-            this.transpCtrl3.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl3_DragEnter);
-            // 
-            // transpCtrl1
-            // 
-            this.transpCtrl1.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl1.Location = new System.Drawing.Point(135, 18);
-            this.transpCtrl1.Name = "transpCtrl1";
-            this.transpCtrl1.Opacity = 100;
-            this.transpCtrl1.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl1.TabIndex = 16;
-            this.transpCtrl1.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl1_DragDrop);
-            this.transpCtrl1.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl1_DragEnter);
-            // 
-            // transpCtrl2
-            // 
-            this.transpCtrl2.BackColor = System.Drawing.Color.Transparent;
-            this.transpCtrl2.Location = new System.Drawing.Point(135, 142);
-            this.transpCtrl2.Name = "transpCtrl2";
-            this.transpCtrl2.Opacity = 100;
-            this.transpCtrl2.Size = new System.Drawing.Size(120, 120);
-            this.transpCtrl2.TabIndex = 15;
-            this.transpCtrl2.DragDrop += new System.Windows.Forms.DragEventHandler(this.transpCtrl2_DragDrop);
-            this.transpCtrl2.DragEnter += new System.Windows.Forms.DragEventHandler(this.transpCtrl2_DragEnter);
+            this.webBrowser2.Location = new System.Drawing.Point(644, 145);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(120, 120);
+            this.webBrowser2.TabIndex = 20;
             // 
             // Form1
             // 
@@ -813,8 +817,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1295, 818);
-            this.Controls.Add(this.logoIconPicBox);
+            this.Controls.Add(this.webVideoBrowser);
             this.Controls.Add(this.transpCtrlLive);
+            this.Controls.Add(this.logoIconPicBox);
             this.Controls.Add(this.axWindowsMediaPlayerLive);
             this.Controls.Add(this.removeVideoFileButton);
             this.Controls.Add(this.addVideoFileButton);
@@ -826,7 +831,6 @@
             this.Controls.Add(this.addRecordFileButton);
             this.Controls.Add(this.removeCameraButton);
             this.Controls.Add(this.addCameraButton);
-            this.Controls.Add(this.previewBox);
             this.Controls.Add(this.broadcastPlaylist);
             this.Controls.Add(this.urlVideos);
             this.Controls.Add(this.recordsList);
@@ -851,6 +855,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.liveAreaVideo);
             this.Controls.Add(this.broadcasterLabel);
+            this.Controls.Add(this.previewBox);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -861,8 +866,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.previewBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer6)).EndInit();
@@ -891,8 +894,6 @@
         private System.Windows.Forms.Button liveButton2;
         private System.Windows.Forms.GroupBox previewBox;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer10;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer9;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer8;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer7;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer6;
@@ -939,6 +940,9 @@
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerLive;
         private TransparentControl transpCtrlLive;
         public System.Windows.Forms.PictureBox logoIconPicBox;
+        private System.Windows.Forms.WebBrowser webVideoBrowser;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser webBrowser2;
     }
 }
 

@@ -170,18 +170,6 @@ namespace Broadcast
             axWindowsMediaPlayer8.stretchToFit = true;
             axWindowsMediaPlayer8.settings.autoStart = true;
             axWindowsMediaPlayer8.settings.setMode("loop", true);
-
-            axWindowsMediaPlayer9.uiMode = "none";
-            axWindowsMediaPlayer9.settings.mute = true;
-            axWindowsMediaPlayer9.stretchToFit = true;
-            axWindowsMediaPlayer9.settings.autoStart = true;
-            axWindowsMediaPlayer9.settings.setMode("loop", true);
-
-            axWindowsMediaPlayer10.uiMode = "none";
-            axWindowsMediaPlayer10.settings.mute = true;
-            axWindowsMediaPlayer10.stretchToFit = true;
-            axWindowsMediaPlayer10.settings.autoStart = true;
-            axWindowsMediaPlayer10.settings.setMode("loop", true);
         }
 
         private void liveButton66_Click(object sender, EventArgs e)
@@ -603,20 +591,23 @@ namespace Broadcast
         {
             if (liveButton11.BackColor == Color.Red)
             {
-                if (axWindowsMediaPlayer9.URL != "")
-                {
-                    disableAllButtons();
-                    disableLivePicture();
-                    axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer9.URL;
-                    axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer9.Ctlcontrols.currentPosition;
-                    liveButton11.BackColor = Color.Lime;
-                }
-            }
-            else
-            {
+                disableAllButtons();
+                disableLivePicture();
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                webVideoBrowser.BringToFront();
+
+                webVideoBrowser.DocumentText = webBrowser1.DocumentText;
+                liveButton11.BackColor = Color.Lime;
+            }
+            else
+            {
+                webVideoBrowser.SendToBack();
+                axWindowsMediaPlayerLive.URL = "";
+                transpCtrlLive.SendToBack();
+                axWindowsMediaPlayerLive.SendToBack();
+                webVideoBrowser.DocumentText = "";
                 liveButton11.BackColor = Color.Red;
             }
         }
@@ -625,20 +616,24 @@ namespace Broadcast
         {
             if (liveButton12.BackColor == Color.Red)
             {
-                if (axWindowsMediaPlayer10.URL != "")
-                {
-                    disableAllButtons();
-                    disableLivePicture();
-                    axWindowsMediaPlayerLive.URL = axWindowsMediaPlayer10.URL;
-                    axWindowsMediaPlayerLive.Ctlcontrols.currentPosition = axWindowsMediaPlayer10.Ctlcontrols.currentPosition;
-                    liveButton12.BackColor = Color.Lime;
-                }
-            }
-            else
-            {
+
+                disableAllButtons();
+                disableLivePicture();
                 axWindowsMediaPlayerLive.URL = "";
                 transpCtrlLive.SendToBack();
                 axWindowsMediaPlayerLive.SendToBack();
+                webVideoBrowser.BringToFront();
+
+                webVideoBrowser.DocumentText = webBrowser2.DocumentText;
+                liveButton12.BackColor = Color.Lime;
+            }
+            else
+            {
+                webVideoBrowser.SendToBack();
+                axWindowsMediaPlayerLive.URL = "";
+                transpCtrlLive.SendToBack();
+                axWindowsMediaPlayerLive.SendToBack();
+                webVideoBrowser.DocumentText = "";
                 liveButton12.BackColor = Color.Red;
             }
         }
@@ -1063,8 +1058,16 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer9.URL = data + "";
-                axWindowsMediaPlayer9.settings.mute = true;
+                var embed = "<html><head>" +
+                "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                "</head><body>" +
+                "<iframe width=\"300\" src=\"{0}\"" +
+                "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                "</body></html>";
+                var url = "https://www.youtube.com/embed/" + data + "";
+                url = url.Replace("https://www.youtube.com/watch?v=", "");
+                webBrowser1.DocumentText = string.Format(embed, url);
+                Console.WriteLine(url);
             }
             else
             {
@@ -1074,8 +1077,7 @@ namespace Broadcast
                     var fileNames = data as String[];
                     if (fileNames.Length > 0)
                     {
-                        axWindowsMediaPlayer9.URL = fileNames[0];
-                        axWindowsMediaPlayer9.settings.mute = true;
+                        //
                     }
                 }
             }
@@ -1086,8 +1088,15 @@ namespace Broadcast
             var data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                axWindowsMediaPlayer10.URL = data + "";
-                axWindowsMediaPlayer10.settings.mute = true;
+                var embed = "<html><head>" +
+                "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                "</head><body>" +
+                "<iframe width=\"300\" src=\"{0}\"" +
+                "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                "</body></html>";
+                var url = "https://www.youtube.com/embed/" + data + "";
+                url = url.Replace("https://www.youtube.com/watch?v=", "");
+                webBrowser2.DocumentText = string.Format(embed, url);
             }
             else
             {
@@ -1097,8 +1106,7 @@ namespace Broadcast
                     var fileNames = data as String[];
                     if (fileNames.Length > 0)
                     {
-                        axWindowsMediaPlayer10.URL = fileNames[0];
-                        axWindowsMediaPlayer10.settings.mute = true;
+                        //
                     }
                 }
             }
@@ -1407,6 +1415,36 @@ namespace Broadcast
         {
             Form2 customizationForm = new Form2(this);
             customizationForm.ShowDialog();
+        }
+
+        private void webVideoBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            if (IsHorizontalScrollbarPresent)
+            {
+                webVideoBrowser.Size = new Size(webVideoBrowser.Document.Body.ScrollRectangle.Width, webVideoBrowser.Document.Body.ScrollRectangle.Height);
+                //Form1.ActiveForm.Size = new Size(webVideoBrowser.Document.Body.ScrollRectangle.Width, webVideoBrowser.Document.Body.ScrollRectangle.Height);
+            }
+        }
+
+        public bool IsHorizontalScrollbarPresent
+        {
+            get
+            {
+                var widthofScrollableArea = webVideoBrowser.Document.Body.ScrollRectangle.Width;
+                var widthofControl = webVideoBrowser.Document.Window.Size.Width;
+
+                return widthofScrollableArea > widthofControl;
+            }
+        }
+
+        private void transpCtrl10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void transpCtrl7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

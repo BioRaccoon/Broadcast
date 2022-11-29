@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Policy;
 using System.Web;
 using System.Windows.Forms;
 
@@ -106,6 +107,7 @@ namespace Broadcast
             transpCtrlLive.SendToBack();
             axWindowsMediaPlayerLive.SendToBack();
             liveWebBrowser.DocumentText = string.Format("", "");
+            liveWebBrowser.SendToBack();
             axWindowsMediaPlayerLive.uiMode = "none";
             axWindowsMediaPlayerLive.settings.mute = true;
             axWindowsMediaPlayerLive.stretchToFit = true;
@@ -804,11 +806,16 @@ namespace Broadcast
             data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
+                Uri myUri = new Uri("http://" + data);
+                var ipAddress = Dns.GetHostAddresses(myUri.Host)[0];
+                MessageBox.Show(ipAddress+"");
                 IPAddress ip;
-                IPAddress.TryParse(data + "", out ip);
+                IPAddress.TryParse(ipAddress + "", out ip);
                 if (ip != null)
                 {
-                    localStream2 = new MJPEGStream("http://" + data + ":8080/videofeed");
+                    //localStream2 = new MJPEGStream("http://" + data + ":8080/videofeed");
+                    localStream2 = new MJPEGStream("http://" + data);
+                    MessageBox.Show("http://" + data);
                     localStream2.NewFrame += new NewFrameEventHandler(pictureBox2_NewFrame);
                     localStream2.Start();
                 }
@@ -878,11 +885,15 @@ namespace Broadcast
             data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
+                Uri myUri = new Uri("http://" + data);
+                var ipAddress = Dns.GetHostAddresses(myUri.Host)[0];
                 IPAddress ip;
-                IPAddress.TryParse(data + "", out ip);
+                IPAddress.TryParse(ipAddress + "", out ip);
                 if (ip != null)
                 {
-                    localStream1 = new MJPEGStream("http://" + data + ":8080/videofeed");
+                    //localStream1 = new MJPEGStream("http://" + data + ":8080/videofeed");
+                    localStream1 = new MJPEGStream("http://" + data);
+                    MessageBox.Show("http://" + data);
                     localStream1.NewFrame += new NewFrameEventHandler(pictureBox1_NewFrame);
                     localStream1.Start();
                 }

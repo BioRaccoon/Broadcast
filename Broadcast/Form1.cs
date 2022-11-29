@@ -808,14 +808,12 @@ namespace Broadcast
             {
                 Uri myUri = new Uri("http://" + data);
                 var ipAddress = Dns.GetHostAddresses(myUri.Host)[0];
-                MessageBox.Show(ipAddress+"");
                 IPAddress ip;
                 IPAddress.TryParse(ipAddress + "", out ip);
                 if (ip != null)
                 {
                     //localStream2 = new MJPEGStream("http://" + data + ":8080/videofeed");
                     localStream2 = new MJPEGStream("http://" + data);
-                    MessageBox.Show("http://" + data);
                     localStream2.NewFrame += new NewFrameEventHandler(pictureBox2_NewFrame);
                     localStream2.Start();
                 }
@@ -893,7 +891,6 @@ namespace Broadcast
                 {
                     //localStream1 = new MJPEGStream("http://" + data + ":8080/videofeed");
                     localStream1 = new MJPEGStream("http://" + data);
-                    MessageBox.Show("http://" + data);
                     localStream1.NewFrame += new NewFrameEventHandler(pictureBox1_NewFrame);
                     localStream1.Start();
                 }

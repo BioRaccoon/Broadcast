@@ -87,9 +87,9 @@
             this.removeVideoFileButton = new System.Windows.Forms.Button();
             this.addVideoFileButton = new System.Windows.Forms.Button();
             this.logoIconPicBox = new System.Windows.Forms.PictureBox();
-            this.axWindowsMediaPlayerLive = new AxWMPLib.AxWindowsMediaPlayer();
             this.liveWebBrowser = new System.Windows.Forms.WebBrowser();
             this.transpCtrlLive = new Broadcast.TransparentControl();
+            this.axWindowsMediaPlayerLive = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.liveAreaVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.previewBox.SuspendLayout();
@@ -610,6 +610,7 @@
             this.screenBroadcastButton.TabIndex = 32;
             this.screenBroadcastButton.Text = "Screen Broadcast";
             this.screenBroadcastButton.UseVisualStyleBackColor = false;
+            this.screenBroadcastButton.Click += new System.EventHandler(this.screenBroadcastButton_Click);
             // 
             // videoFiles
             // 
@@ -786,15 +787,6 @@
             this.logoIconPicBox.TabIndex = 0;
             this.logoIconPicBox.TabStop = false;
             // 
-            // axWindowsMediaPlayerLive
-            // 
-            this.axWindowsMediaPlayerLive.Enabled = true;
-            this.axWindowsMediaPlayerLive.Location = new System.Drawing.Point(788, 96);
-            this.axWindowsMediaPlayerLive.Name = "axWindowsMediaPlayerLive";
-            this.axWindowsMediaPlayerLive.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerLive.OcxState")));
-            this.axWindowsMediaPlayerLive.Size = new System.Drawing.Size(495, 280);
-            this.axWindowsMediaPlayerLive.TabIndex = 49;
-            // 
             // liveWebBrowser
             // 
             this.liveWebBrowser.Location = new System.Drawing.Point(788, 96);
@@ -810,6 +802,15 @@
             this.transpCtrlLive.Opacity = 100;
             this.transpCtrlLive.Size = new System.Drawing.Size(495, 280);
             this.transpCtrlLive.TabIndex = 50;
+            // 
+            // axWindowsMediaPlayerLive
+            // 
+            this.axWindowsMediaPlayerLive.Enabled = true;
+            this.axWindowsMediaPlayerLive.Location = new System.Drawing.Point(788, 96);
+            this.axWindowsMediaPlayerLive.Name = "axWindowsMediaPlayerLive";
+            this.axWindowsMediaPlayerLive.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerLive.OcxState")));
+            this.axWindowsMediaPlayerLive.Size = new System.Drawing.Size(495, 280);
+            this.axWindowsMediaPlayerLive.TabIndex = 49;
             // 
             // Form1
             // 

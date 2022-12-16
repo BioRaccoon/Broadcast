@@ -9,6 +9,7 @@ using System.Net;
 using System.Security.Policy;
 using System.Web;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace Broadcast
 {
@@ -1469,6 +1470,75 @@ namespace Broadcast
         {
             Form2 customizationForm = new Form2(this);
             customizationForm.ShowDialog();
+        }
+
+        private void screenBroadcastButton_Click(object sender, EventArgs e) {
+
+            // get entire desktop area size
+            Rectangle screenArea = Rectangle.Empty;
+            foreach (System.Windows.Forms.Screen screen in
+                      System.Windows.Forms.Screen.AllScreens) {
+                screenArea = Rectangle.Union(screenArea, screen.Bounds);
+            }
+
+            // create screen capture video source
+            ScreenCaptureStream stream = new ScreenCaptureStream(screenArea);
+
+            if (screenBroadcastButton.BackColor == Color.Red) {
+
+                disableAllButtons();
+                axWindowsMediaPlayerLive.URL = "";
+                transpCtrlLive.SendToBack();
+                axWindowsMediaPlayerLive.SendToBack();
+                liveWebBrowser.SendToBack(); liveWebBrowser.DocumentText = string.Format("", "");
+
+                // set NewFrame event handler
+                stream.NewFrame += new NewFrameEventHandler(LiveAreaCamera_NewFrame);
+
+                // start the video source
+                stream.Start();
+
+                screenBroadcastButton.BackColor = Color.Lime;
+            }
+            else {
+                // ...
+                // signal to stop
+                //stream.SignalToStop();
+                stream.Stop();
+                // ...
+                liveAreaVideo.Image = Resources.no_signal;
+                screenBroadcastButton.BackColor = Color.Red;
+            }
+
+
+
+
+
+
+        }
+
+        private void video_NewFrame(object sender, NewFrameEventArgs eventArgs) {
+            // get new frame
+            Bitmap bitmap = eventArgs.Frame;
+            // process the frame
+        }
+
+        public static Bitmap TakeScreenshot() {
+            Rectangle totalSize = Rectangle.Empty;
+
+            foreach (Screen s in Screen.AllScreens)
+                totalSize = Rectangle.Union(totalSize, s.Bounds);
+
+            Bitmap screenShotBMP = new Bitmap(totalSize.Width, totalSize.Height, PixelFormat.Format32bppArgb);
+
+            Graphics screenShotGraphics = Graphics.FromImage(screenShotBMP);
+
+            screenShotGraphics.CopyFromScreen(totalSize.X, totalSize.Y, 0, 0, totalSize.Size,
+                CopyPixelOperation.SourceCopy);
+
+            screenShotGraphics.Dispose();
+
+            return screenShotBMP;
         }
     }
 }

@@ -35,6 +35,7 @@ namespace Broadcast
         String playlistFolder = "";
         String resourcesFolder = "";
         String recordsFolder = "";
+        String urlFile = "";
         String dateNow = "";
         String url1 = "";
         String url2 = "";
@@ -68,6 +69,7 @@ namespace Broadcast
             videoFiles.Items.Clear();
             broadcastPlaylist.Items.Clear();
             recordsList.Items.Clear();
+            urlVideos.Items.Clear();
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in filterInfoCollection)
             {
@@ -88,6 +90,12 @@ namespace Broadcast
             foreach (string file in recordsFiles)
             {
                 recordsList.Items.Add(Path.GetFileName(file));
+            }
+            string[] urls = File.ReadAllLines(urlFile);
+            foreach(string url in urls)
+            {
+                Console.WriteLine(url);
+                urlVideos.Items.Add(url);
             }
         }
 
@@ -129,6 +137,7 @@ namespace Broadcast
             resourcesFolder = broadcastDirectory + "Resources\\VIDEOSINDES1\\";
             playlistFolder = broadcastDirectory + "Resources\\Playlist\\";
             recordsFolder = broadcastDirectory + "Resources\\Records\\";
+            urlFile = broadcastDirectory + "Resources\\urls.txt";
         }
 
         private void defaultControlVideo()
@@ -1344,7 +1353,9 @@ namespace Broadcast
             if (dialogResult == DialogResult.OK)
             {
                 urlVideos.Items.Add(textBox.Text);
+                File.AppendAllText(urlFile, textBox.Text + Environment.NewLine);
             }
+
         }
 
         private void addVideoFileButton_Click(object sender, EventArgs e)

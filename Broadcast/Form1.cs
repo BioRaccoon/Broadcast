@@ -807,16 +807,20 @@ namespace Broadcast
             data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                Uri myUri = new Uri("http://" + data);
-                var ipAddress = Dns.GetHostAddresses(myUri.Host)[0];
-                IPAddress ip;
-                IPAddress.TryParse(ipAddress + "", out ip);
-                if (ip != null)
+                string myString = "http://" + data;
+                Uri myUri;
+                if (Uri.TryCreate(myString, UriKind.RelativeOrAbsolute, out myUri))
                 {
-                    //localStream2 = new MJPEGStream("http://" + data + ":8080/videofeed");
-                    localStream2 = new MJPEGStream("http://" + data);
-                    localStream2.NewFrame += new NewFrameEventHandler(pictureBox2_NewFrame);
-                    localStream2.Start();
+                    var ipAddress = Dns.GetHostAddresses(myUri.Host)[0];
+                    IPAddress ip;
+                    IPAddress.TryParse(ipAddress + "", out ip);
+                    if (ip != null)
+                    {
+                        //localStream2 = new MJPEGStream("http://" + data + ":8080/videofeed");
+                        localStream2 = new MJPEGStream("http://" + data);
+                        localStream2.NewFrame += new NewFrameEventHandler(pictureBox2_NewFrame);
+                        localStream2.Start();
+                    }
                 }
                 else
                 {
@@ -884,16 +888,20 @@ namespace Broadcast
             data = e.Data.GetData(DataFormats.Text);
             if (data != null)
             {
-                Uri myUri = new Uri("http://" + data);
-                var ipAddress = Dns.GetHostAddresses(myUri.Host)[0];
-                IPAddress ip;
-                IPAddress.TryParse(ipAddress + "", out ip);
-                if (ip != null)
+                string myString = "http://" + data;
+                Uri myUri;
+                if (Uri.TryCreate(myString, UriKind.RelativeOrAbsolute, out myUri))
                 {
-                    //localStream1 = new MJPEGStream("http://" + data + ":8080/videofeed");
-                    localStream1 = new MJPEGStream("http://" + data);
-                    localStream1.NewFrame += new NewFrameEventHandler(pictureBox1_NewFrame);
-                    localStream1.Start();
+                    var ipAddress = Dns.GetHostAddresses(myUri.Host)[0];
+                    IPAddress ip;
+                    IPAddress.TryParse(ipAddress + "", out ip);
+                    if (ip != null)
+                    {
+                        //localStream1 = new MJPEGStream("http://" + data + ":8080/videofeed");
+                        localStream1 = new MJPEGStream("http://" + data);
+                        localStream1.NewFrame += new NewFrameEventHandler(pictureBox1_NewFrame);
+                        localStream1.Start();
+                    }
                 }
                 else
                 {

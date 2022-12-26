@@ -15,8 +15,8 @@ namespace Broadcast
 {
     public partial class Form2 : Form
     {
-        private Form1 parentForm;
-        public Form2(Form1 parentForm)
+        private Broadcaster parentForm;
+        public Form2(Broadcaster parentForm)
         {
             InitializeComponent();
             this.parentForm = parentForm;

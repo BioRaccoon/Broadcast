@@ -1,6 +1,6 @@
 ﻿namespace Broadcast
 {
-    partial class Form1
+    partial class Broadcaster
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Broadcaster));
             this.broadcasterLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.liveButton1 = new System.Windows.Forms.Button();
@@ -118,7 +118,7 @@
             this.broadcasterLabel.Location = new System.Drawing.Point(11, 18);
             this.broadcasterLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.broadcasterLabel.Name = "broadcasterLabel";
-            this.broadcasterLabel.Size = new System.Drawing.Size(567, 54);
+            this.broadcasterLabel.Size = new System.Drawing.Size(700, 66);
             this.broadcasterLabel.TabIndex = 5;
             this.broadcasterLabel.Text = "INDES - BROADCASTER";
             this.broadcasterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,7 +131,7 @@
             this.label1.Location = new System.Drawing.Point(966, 383);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 28);
+            this.label1.Size = new System.Drawing.Size(143, 34);
             this.label1.TabIndex = 13;
             this.label1.Text = "MIX LIVE";
             // 
@@ -621,9 +621,10 @@
             // 
             this.videoFiles.AllowDrop = true;
             this.videoFiles.FormattingEnabled = true;
+            this.videoFiles.ItemHeight = 16;
             this.videoFiles.Location = new System.Drawing.Point(23, 444);
             this.videoFiles.Name = "videoFiles";
-            this.videoFiles.Size = new System.Drawing.Size(182, 303);
+            this.videoFiles.Size = new System.Drawing.Size(182, 292);
             this.videoFiles.TabIndex = 33;
             this.videoFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
             // 
@@ -631,9 +632,10 @@
             // 
             this.CamerasBox.AllowDrop = true;
             this.CamerasBox.FormattingEnabled = true;
+            this.CamerasBox.ItemHeight = 16;
             this.CamerasBox.Location = new System.Drawing.Point(399, 444);
             this.CamerasBox.Name = "CamerasBox";
-            this.CamerasBox.Size = new System.Drawing.Size(182, 121);
+            this.CamerasBox.Size = new System.Drawing.Size(182, 116);
             this.CamerasBox.TabIndex = 35;
             this.CamerasBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CamerasBox_MouseDown);
             // 
@@ -641,9 +643,10 @@
             // 
             this.recordsList.AllowDrop = true;
             this.recordsList.FormattingEnabled = true;
+            this.recordsList.ItemHeight = 16;
             this.recordsList.Location = new System.Drawing.Point(399, 648);
             this.recordsList.Name = "recordsList";
-            this.recordsList.Size = new System.Drawing.Size(182, 95);
+            this.recordsList.Size = new System.Drawing.Size(182, 84);
             this.recordsList.TabIndex = 36;
             this.recordsList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.recordsList_MouseDown);
             // 
@@ -651,9 +654,10 @@
             // 
             this.urlVideos.AllowDrop = true;
             this.urlVideos.FormattingEnabled = true;
+            this.urlVideos.ItemHeight = 16;
             this.urlVideos.Location = new System.Drawing.Point(211, 444);
             this.urlVideos.Name = "urlVideos";
-            this.urlVideos.Size = new System.Drawing.Size(182, 303);
+            this.urlVideos.Size = new System.Drawing.Size(182, 292);
             this.urlVideos.TabIndex = 37;
             this.urlVideos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.urlVideos_MouseDown);
             // 
@@ -661,9 +665,10 @@
             // 
             this.broadcastPlaylist.AllowDrop = true;
             this.broadcastPlaylist.FormattingEnabled = true;
+            this.broadcastPlaylist.ItemHeight = 16;
             this.broadcastPlaylist.Location = new System.Drawing.Point(587, 444);
             this.broadcastPlaylist.Name = "broadcastPlaylist";
-            this.broadcastPlaylist.Size = new System.Drawing.Size(182, 303);
+            this.broadcastPlaylist.Size = new System.Drawing.Size(182, 292);
             this.broadcastPlaylist.TabIndex = 38;
             this.broadcastPlaylist.DragDrop += new System.Windows.Forms.DragEventHandler(this.broadcastPlaylist_DragDrop);
             this.broadcastPlaylist.DragEnter += new System.Windows.Forms.DragEventHandler(this.broadcastPlaylist_DragEnter);
@@ -818,7 +823,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(57, 414);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 22);
+            this.label2.Size = new System.Drawing.Size(134, 27);
             this.label2.TabIndex = 52;
             this.label2.Text = "Video Files";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -829,7 +834,7 @@
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(248, 414);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 22);
+            this.label3.Size = new System.Drawing.Size(127, 27);
             this.label3.TabIndex = 53;
             this.label3.Text = "Url Videos";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -840,7 +845,7 @@
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(444, 414);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 22);
+            this.label4.Size = new System.Drawing.Size(113, 27);
             this.label4.TabIndex = 54;
             this.label4.Text = "Cameras";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -851,7 +856,7 @@
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(444, 619);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 22);
+            this.label5.Size = new System.Drawing.Size(107, 27);
             this.label5.TabIndex = 55;
             this.label5.Text = "Records";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -862,12 +867,12 @@
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(635, 414);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 22);
+            this.label6.Size = new System.Drawing.Size(91, 27);
             this.label6.TabIndex = 56;
             this.label6.Text = "Playlist";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // Broadcaster
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
@@ -920,8 +925,8 @@
             this.Controls.Add(this.previewBox);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Broadcaster";
+            this.Text = "Broadcaster";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.liveAreaVideo)).EndInit();

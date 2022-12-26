@@ -13,9 +13,9 @@ using System.Drawing.Imaging;
 
 namespace Broadcast
 {
-    public partial class Form1 : Form
+    public partial class Broadcaster : Form
     {
-        public Form1()
+        public Broadcaster()
         {
             InitializeComponent();
 
@@ -1128,7 +1128,8 @@ namespace Broadcast
         private void transpCtrl9_DragDrop(object sender, DragEventArgs e)
         {
             var data = e.Data.GetData(DataFormats.Text);
-            if (data != null)
+            var videoId = getVideoID(data + "");
+            if (data != null && videoId != "")
             {
                 var embed = "<html><head>" +
                 "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
@@ -1136,7 +1137,6 @@ namespace Broadcast
                 "<iframe width=\"120\" height=\"120\" src=\"{0}\"" +
                 "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
                 "</body></html>";
-                var videoId = getVideoID(data + "");
                 url1 = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&loop=1&mute=1&controls=0";
                 webBrowser1.DocumentText = string.Format(embed, url1);
                 webBrowser1.BringToFront();
@@ -1146,7 +1146,8 @@ namespace Broadcast
         private void transpCtrl10_DragDrop(object sender, DragEventArgs e)
         {
             var data = e.Data.GetData(DataFormats.Text);
-            if (data != null)
+            var videoId = getVideoID(data + "");
+            if (data != null && videoId != "")
             {
                 var embed = "<html><head>" +
                 "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
@@ -1154,7 +1155,6 @@ namespace Broadcast
                 "<iframe width=\"120\" height=\"120\" src=\"{0}\"" +
                 "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
                 "</body></html>";
-                var videoId = getVideoID(data + "");
                 url2 = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&loop=1&mute=1&controls=0";
                 webBrowser2.DocumentText = string.Format(embed, url2);
                 webBrowser2.BringToFront();
@@ -1163,23 +1163,27 @@ namespace Broadcast
 
         public string getVideoID(string url)
         {
-            var uri = new Uri(url);
-
-            // you can check host here => uri.Host <= "www.youtube.com"
-
-            var query = HttpUtility.ParseQueryString(uri.Query);
-
-            var videoId = string.Empty;
-
-            if (query.AllKeys.Contains("v"))
+            Uri uri;
+            if (url.Contains("http") && Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out uri))
             {
-                videoId = query["v"];
+
+                // you can check host here => uri.Host <= "www.youtube.com"
+
+                var query = HttpUtility.ParseQueryString(uri.Query);
+
+                var videoId = string.Empty;
+
+                if (query.AllKeys.Contains("v"))
+                {
+                    videoId = query["v"];
+                }
+                else
+                {
+                    videoId = uri.Segments.Last();
+                }
+                return videoId;
             }
-            else
-            {
-                videoId = uri.Segments.Last();
-            }
-            return videoId;
+            return "";
         }
 
         private void transpCtrl1_DragEnter(object sender, DragEventArgs e)
@@ -1487,8 +1491,10 @@ namespace Broadcast
 
         private void customizeChannelButton_Click(object sender, EventArgs e)
         {
+            customizeChannelButton.BackColor = Color.Lime;
             Form2 customizationForm = new Form2(this);
             customizationForm.ShowDialog();
+            customizeChannelButton.BackColor = Color.Red;
         }
 
         private void screenBroadcastButton_Click(object sender, EventArgs e) {
